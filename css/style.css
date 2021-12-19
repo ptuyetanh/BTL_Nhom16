@@ -1,4 +1,4 @@
-.sidebar .bi-twitter{
+.bi-twitter{
   font-size: 30px;
 }
 .img-login{
@@ -145,4 +145,35 @@ footer .footer2{
 .input-group-text {
   border-radius: 100px;
 }
-
+/* sidebar  */
+.sidebar ul li:hover{
+  background-color: rgb(228, 228, 228);
+  border-radius: 30px;
+}
+.sidebar ul .btn_tweet{
+  border-radius: 30px;
+  width: 180px;
+  font-size: 24px;
+}
+.sidebar ul .dropup{
+ position: fixed;
+ bottom: 0;
+}
+.sidebar ul .dropup .dropdown-menu{
+  border-radius:15px; 
+}
+/* main home */
+.tweet-status .status form textarea{
+outline: none;
+border: none;
+}
+#tweet a .btn{
+margin-right: 00px;
+padding-left: 40px;
+padding-right: 40px;
+border-radius:30px;
+}
+/* search  */
+.search .form-control{
+border-radius: 30px;
+}
