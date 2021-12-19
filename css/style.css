@@ -101,4 +101,48 @@ footer .footer2{
   .form-signup .h3{
     margin-left: 40px;
   }
+  /*signin*/
+  .form-signin .bi-twitter{
+    font-size: 50px;
+    color: rgb(29, 155, 240);
+}
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin:auto;
+    margin-top:110px;
+  }
+  .form-signin .bi-twitter{
+    margin-left:120px;
+  }
+  
+  .form-signin .checkbox {
+    font-weight: 400;
+  }
+  
+  .form-signin .form-floating:focus-within {
+    z-index: 2;
+  }
+  
+  .form-signin input[type="tên đăng nhập"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  
+  .form-signin input[type="mật khẩu"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  .form-signin .btn{
+      border-radius: 30px;
+  }
+.form-signin .footer-copy{
+    margin-left: 120px;
+}
+.input-group-text {
+  border-radius: 100px;
+}
 
