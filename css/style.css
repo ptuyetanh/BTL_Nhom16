@@ -3,7 +3,7 @@
 }
 .img-login{
     height: 675px;
-    background-image: url("/img/login.png");
+    background-image: url(https://abs.twimg.com/sticky/illustrations/lohp_1302x955.png);
     background-position:center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -30,7 +30,7 @@
 .main-login .dk{
   margin-top: 30px;
 }
-.main-login .dk button{
+.main-login .dk .signup{
     font-size: 20px;
     line-height: 20px;
     border-radius: 20px;
@@ -43,7 +43,7 @@
 .main-login .dk p a{
     text-decoration: none;
 }
-.main-login .login button{
+.main-login .login .signin{
     font-size: 20px;
     line-height: 20px;
     border-radius: 20px;
@@ -85,7 +85,7 @@ footer .footer2{
     border-top-left-radius: 0;
     border-top-right-radius: 0;
   }
-  .bi-twitter{
+  .form-signup .bi-twitter{
       color: dodgerblue;
       font-size: 50px;
       margin-left: 120px;
@@ -146,6 +146,13 @@ footer .footer2{
   border-radius: 100px;
 }
 /* sidebar  */
+.sidebar .bi-twitter{
+  font-size: 30px;
+}
+.sidebar .bi-twitter:hover{
+  background-color: rgb(208, 215, 253);
+  border-radius: 30px;
+}
 .sidebar ul li:hover{
   background-color: rgb(228, 228, 228);
   border-radius: 30px;
@@ -166,14 +173,31 @@ footer .footer2{
 .tweet-status .status form textarea{
 outline: none;
 border: none;
+resize: none;
+width:100%;
+font-size: 25px;
+margin-left: 8px;
 }
-#tweet a .btn{
-margin-right: 00px;
-padding-left: 40px;
-padding-right: 40px;
+.tweet-status .status form input{
+  color: white ;
+  border:none ;
+  padding: 6px 24px;
+  font-size: 18px;
+}
+#submit-tweet-button:disabled{
+  cursor: not-allowed !important;
+  background-color: rgb(132, 132, 233);
+}
+#submit-tweet-button:enabled{
+  cursor: pointer !important;
+}
+#tweet_post input{
 border-radius:30px;
 }
 /* search  */
 .search .form-control{
 border-radius: 30px;
+width: 250px;
+height: 40px;
 }
+

@@ -23,14 +23,14 @@
                 <h1 class="t-1">Đang diễn ra ngay bây giờ</h1>
                 <h4 class="t-2">Tham gia Twitter hôm nay.</h4>
                 <div class="dk">
-                    <button type="button" class="btn btn-outline-primary btn-dangki">Đăng kí</button>
+                    <a type="button" class="btn btn-outline-primary signup" href="./signup.php">Đăng kí</a>
                     <p>Khi đăng ký, bạn đã đồng ý với <a href="#">Điều khoản Dịch vụ</a> <br> và <a href="#">Chính sách
                             Quyền
                             riêng tư</a>, gồm cả <a href="#">Sử dụng Cookie</a>.</p>
                 </div>
                 <div class="login mt-4">
                     <h6>Bạn đã có tài khoản?</h6>
-                    <button type="button" class="btn btn-outline-primary btn-login">Đăng nhập</button>
+                    <a type="button" class="btn btn-outline-primary signin" href="./signin.php">Đăng nhập</a>
                 </div>
             </div>
         </div>

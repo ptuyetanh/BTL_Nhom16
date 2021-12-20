@@ -16,7 +16,7 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-md-3 sidebar mt-auto ">
+            <div class="col-md-3 sidebar mt-auto">
                 <nav class="navbar navbar-expand-md ">
                     <a class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu"
                         aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,9 +65,27 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="nav-link btn btn-primary text-light btn_tweet fs-1,8" href="#">
+                                <a class="nav-link btn btn-primary text-light btn_tweet fs-1,8" data-bs-toggle="modal"
+                                    data-bs-target="#model-tweet" href="#">
                                     Tweet
                                 </a>
+                                <!-- Modal -->
+                                <div class="modal fade" id="model-tweet" data-bs-backdrop="static"
+                                    data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body row">
+                                                <!-- tweet-status phan lap lai sd php -->
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </li>
                             <li class="nav-link dropup p-2">
                                 <a href="#"
@@ -114,49 +132,69 @@
                     <div class="card mb-3 status border-0" style="max-width: 650px;">
                         <div class="row g-0">
                             <div class="col-md-2">
-                                <img src="./img/no-image.png" alt="" class="rounded-circle ms-4" width="50" height="50">
+                                <img src="./img/no-image.png" alt="" class="rounded-circle ms-4" width="40" height="40">
                             </div>
                             <div class="col-md-10">
-                                <div class="card-body">
-                                    <nav class="navbar navbar-light">
-                                        <div class="container-fluid">
-                                            <form action="" method="">
-                                                <textarea name="content_status" cols="25"
-                                                    placeholder="Bạn đang nghĩ gì?"></textarea>
-                                            </form>
+                                <form action="" method="">
+                                    <textarea name="content_status" placeholder="Bạn đang nghĩ gì?"
+                                        aria-label="Bạn đang nghĩ gì" autofocus id="content_status"></textarea>
+                                    <div id="tweet_post">
+                                        <div class="container-fluid row">
+                                            <div class="col-md-9">
+                                                <span class="material-icons text-primary me-2 ">
+                                                    image</span>
+                                                <span class="material-icons fs-4,5 text-primary me-2">
+                                                    gif_box
+                                                </span>
+                                                <span class="material-icons fs-4,5 text-primary me-2">
+                                                    sentiment_satisfied
+                                                </span>
+                                                <span class="material-icons fs-4,5 text-primary me-2">
+                                                    align_horizontal_left
+                                                </span>
+                                                <span class="material-icons fs-4,5 text-primary me-2">
+                                                    event_available
+                                                </span>
+                                                <span class="material-icons fs-4,5 text-primary me-2">
+                                                    location_on
+                                                </span>
+                                            </div>
+                                            <div class="col-md-3 bg-light">
+                                                <input class="bg-primary" type="submit" id="submit-tweet-button"
+                                                    value="Tweet" role="button" disabled="true">
+                                            </div>
                                         </div>
-                                    </nav>
-                                </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
-                    <hr class="text-secondary">
-                    <div id="tweet">
-
-                        <span class="material-icons text-primary">
-                            image
-                        </span>
-
-                        <span class="material-icons fs-4,5 text-primary">
-                            gif_box
-                        </span>
-                        <span class="material-icons fs-4,5 text-primary">
-                            sentiment_satisfied
-                        </span></a>
-
-                        <a class="btn btn-primary " type="submit">Tweet</a>
-                        </nav>
-                    </div>
                 </div>
+                <hr>
+                <!-- post-tweet  -->
+                <section class="post-tweet">
+                    
+                </section>
             </main>
             <div class="col-md-3 search w-5 h-5">
                 <nav class="navbar navbar-light">
-                    <div class="container-fluid">
-                      <form class="d-flex">
-                        <input class="form-control bg-light" type="search" placeholder="Tìm kiếm " aria-label="Search">
-                      </form>
+                    <div class="container">
+                        <!-- search  -->
+                        <form class="d-flex">
+                            <input class="form-control bg-light" type="search" placeholder="Tìm kiếm "
+                                aria-label="Search">
+                        </form>
                     </div>
-                  </nav>
+                </nav>
+                <!-- Trends for you -->
+                <nav class="navbar navbar-light header-home bg-light">
+                    <div class="container">
+                            <strong>Xu hướng của bạn</strong>
+                        <a class="nav-item text-dark fs-4" href="">
+                            <i class="bi bi-gear"></i>
+                        </a>
+                    </div>
+                </nav>
             </div>
         </div>
     </div>
