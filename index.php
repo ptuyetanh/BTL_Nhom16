@@ -20,7 +20,7 @@
                 <nav class="navbar navbar-expand-md ">
                     <a class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu"
                         aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="bi bi-twitter text-primary p-2 "></i>
+                        <i class="bi bi-twitter text-primary p-2"></i>
                     </a>
                     <div class="collapse navbar-collapse" id="sidebarMenu">
                         <ul class="navbar-nav flex-column">
@@ -81,7 +81,6 @@
                                             </div>
                                             <div class="modal-body row">
                                                 <!-- tweet-status phan lap lai sd php -->
-                                                
                                             </div>
                                         </div>
                                     </div>
@@ -91,15 +90,30 @@
                                 <a href="#"
                                     class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
                                     id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <img src="./img/no-image.png" alt="" class="rounded-circle me-3" width="32"
-                                        height="32">
-                                    <strong>Tên đăng nhập</strong>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <img src="./img/no-image.png" alt="" class="rounded-circle me-3 mt-2"
+                                                width="32" height="32">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <span>Tên người dùng</span><br>
+                                            <strong>@Tên đăng nhập</strong>
+                                        </div>
+                                    </div>
                                 </a>
                                 <ul class="dropdown-menu text-small shadow " aria-labelledby="dropdownUser2">
                                     <li><a class="dropdown-item" href="#">
-                                            <img src="./img/no-image.png" alt="" class="rounded-circle me-3" width="32"
-                                                height="32">
-                                            <strong>Tên đăng nhập </strong></a>
+                                            <div class="row">
+                                                <div class="col-md-1 mt-2 me-1">
+                                                    <img src="./img/no-image.png" alt="" class="rounded-circle"
+                                                        width="23" height="23">
+                                                </div>
+                                                <div class="col-md-10">
+                                                    <span>Tên người dùng</span><br>
+                                                    <strong>Tên đăng nhập </strong>
+                                                </div>
+                                            </div>
+                                        </a>
                                     </li>
                                     <li><a class="dropdown-item" href="#">Cài Đặt</a></li>
                                     <li><a class="dropdown-item" href="#">Hồ sơ</a></li>
@@ -117,24 +131,21 @@
             <main class="col-md-6 main border-start border-end">
                 <!-- header-home  -->
                 <nav class="navbar navbar-light header-home">
-                    <div class="container-fluid">
-                        <a class="navbar-brand" href="#">
+                    <div class="container-fluid home_main">
+                        <a class="navbar-brand ms-4 mt-2" href="#">
                             <strong>Trang chủ</strong>
-                        </a>
-                        <a class="nav-item text-dark fs-4" href="">
-                            <i class="bi bi-stars"></i>
                         </a>
                     </div>
                 </nav>
                 <!-- tweet-status  -->
-                <div class="tweet-status">
+                <div class="tweet-status mt-5">
                     <!-- status  -->
-                    <div class="card mb-3 status border-0" style="max-width: 650px;">
-                        <div class="row g-0">
+                    <div class="card mb-3 status border-0" style="max-width: 700px;">
+                        <div class="row g-0 ">
                             <div class="col-md-2">
-                                <img src="./img/no-image.png" alt="" class="rounded-circle ms-4" width="40" height="40">
+                                <img src="./img/no-image.png" alt="" class="rounded-circle ms-5" width="40" height="40">
                             </div>
-                            <div class="col-md-10">
+                            <div class="col-md-10 ">
                                 <form action="" method="">
                                     <textarea name="content_status" placeholder="Bạn đang nghĩ gì?"
                                         aria-label="Bạn đang nghĩ gì" autofocus id="content_status"></textarea>
@@ -173,11 +184,48 @@
                 <hr>
                 <!-- post-tweet  -->
                 <section class="post-tweet">
-                    
+                    <div class="card mb-3 post border-0" style="max-width: 700px;">
+                        <div class="row g-0">
+                            <div class="col-md-2">
+                                <img src="./img/no-image.png" alt="" class="rounded-circle ms-5" width="40" height="40">
+                            </div>
+                            <div class="col-md-10 ">
+                                <div class="post_header container-fluid row">
+                                    <div class="col-md-10 post_header_left">
+                                        <a class="Name " href=""><strong>Tên người dùng</strong></a>
+                                        <span>@tênđăngnhap</span>
+                                        <span>ngày</span>
+                                    </div>
+                                    <div class="col-md-2 post_header_right">
+                                        <i class="bi bi-three-dots "></i>
+                                    </div>
+                                </div>
+                                <div class="post_body ms-4">
+                                    <div> post text..... </div>
+                                </div>
+                                <div class="post_footer">
+                                    <ul class="nav nav-pills nav-fill mt-3 me-5">
+                                        <li class="nav-item">
+                                          <a class="fs-5" href=""><i class="bi bi-chat"></i></a>
+                                        </li>
+                                        <li class="nav-item ">
+                                          <a class="fs-5" href="#"><i class="bi bi-arrow-left-right"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class=" fs-5" href="#"><i class="bi bi-heart"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class=" fs-5"><i class="bi bi-share"></i></a>
+                                        </li>
+                                      </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </section>
             </main>
             <div class="col-md-3 search w-5 h-5">
-                <nav class="navbar navbar-light">
+                <nav class="navbar navbar-light nav-pills nav-fill search_tweet">
                     <div class="container">
                         <!-- search  -->
                         <form class="d-flex">
@@ -187,14 +235,84 @@
                     </div>
                 </nav>
                 <!-- Trends for you -->
-                <nav class="navbar navbar-light header-home bg-light">
-                    <div class="container">
+                <div class="trends-you">
+                    <nav class="navbar navbar-light header-home bg-light">
+                        <div class="container">
                             <strong>Xu hướng của bạn</strong>
-                        <a class="nav-item text-dark fs-4" href="">
-                            <i class="bi bi-gear"></i>
-                        </a>
+                            <a class="nav-item text-dark fs-4" href="">
+                                <i class="bi bi-gear"></i>
+                            </a>
+                        </div>
+                    </nav>
+                    <ul class="nav nav-pills nav-fill t-trends bg-light ">
+                        <li class="nav-item ">
+                            <a class="nav-link text-dark" href="#">
+                                <div class="container-fluid row">
+                                    <div class="col-md-10">
+                                        <span>Chủ đề</span><br>
+                                        <strong>#tag Trends</strong>
+                                        <br>
+                                        ...tweet
+                                    </div>
+                                    <div class="col-md-2 ">
+                                        <i class="bi bi-three-dots ms-4"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="follow-suggestion mt-4">
+                    <nav class="navbar navbar-light header-home bg-light">
+                        <div class="container">
+                            <strong>Gợi ý theo dõi</strong>
+                        </div>
+                    </nav>
+                    <ul class="nav nav-pills nav-fill follow bg-light">
+                        <li class="nav-item ">
+                            <a class="nav-link text-dark" href="#">
+                                <div class="container-fluid row">
+                                    <div class="col-md-4">
+                                        <img src="./img/no-image.png" alt="" class="rounded-circle" width="40"
+                                            height="40">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <span>tên người dùng</span><br>
+                                        <strong>@tên đăng nhập</strong>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input class="bg-primary" type="submit" id="submit-follow" value="Follow"
+                                            role="button" disabled="true">
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <footer class="containner footer-right">
+                    <div class="footer-right">
+                        <a class="nav-link text-muted " href="#">Giới Thiệu</a>
+                        <a class="nav-link text-muted" href="#">Trung Tâm trợ giúp</a>
+                        <a class="nav-link text-muted" href="#">Điều khoản dịch vụ </a>
+                        <a class="nav-link text-muted" href="#">Chính sách riêng tư </a>
+                        <a class="nav-link text-muted" href="#">Chính sách cookie</a>
+                        <a class="nav-link text-muted" href="#">Thông tin quảng cáo</a>
+                        <a class="nav-link text-muted" href="#">Blog</a>
+                        <a class="nav-link text-muted" href="#">Trạng Thái</a>
+                        <a class="nav-link text-muted" href="#">Nghề nghiệp</a>
+                        <a class="nav-link text-muted" href="#">Tài nguyên thương hiệu</a>
+                        <a class="nav-link text-muted" href="#">Quảng cáo</a>
+                        <a class="nav-link text-muted" href="#">Tiếp thị</a>
+                        <a class="nav-link text-muted" href="#">Link</a>
+                        <a class="nav-link text-muted" href="#">Twitter cho doanh nghiệp</a>
+                        <a class="nav-link text-muted" href="#">Nhà phát triển </a>
+                        <a class="nav-link text-muted" href="#">Danh mục</a>
+                        <a class="nav-link text-muted" href="#">Cài đặt</a>
                     </div>
-                </nav>
+                    <div class="f-right me-5">
+                        &copy;2021Twitter
+                    </div>
+                </footer>
             </div>
         </div>
     </div>

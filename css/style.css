@@ -170,6 +170,10 @@ footer .footer2{
   border-radius:15px; 
 }
 /* main home */
+.home_main{
+  position: fixed;
+  top: 0;
+}
 .tweet-status .status form textarea{
 outline: none;
 border: none;
@@ -194,10 +198,74 @@ margin-left: 8px;
 #tweet_post input{
 border-radius:30px;
 }
+.post-tweet .post_header .Name{
+  text-decoration: none;
+  color: black;
+}
+.post-tweet .post_header .Name:hover{
+  text-decoration: underline;
+}
+.post-tweet .post_header .post_header_right{
+  width: 30px;
+  height: 25px;
+  margin-right: 20px;
+  border-radius: 100px;
+}
+.post-tweet .post_header .post_header_right:hover{
+  background-color: rgb(208, 215, 253);
+  color: rgb(117, 127, 194);;
+}
+.post-tweet .post_footer a{
+  border-radius: 100px;
+  color: black;
+}
+.post-tweet .post_footer a:hover{
+  background-color: rgb(194, 203, 253);
+  color: blue;
+}
+.post-tweet .post_footer a .bi-heart{
+  border-radius: 100px;
+}
+.post-tweet .post_footer a .bi-heart:hover{
+  background-color: rgb(255, 210, 210);
+  color: red;
+}
 /* search  */
 .search .form-control{
 border-radius: 30px;
 width: 250px;
 height: 40px;
 }
-
+.header-home .bi-gear:hover{
+  background-color:   rgb(233, 233, 233);
+  border-radius: 30px;
+}
+.header-home .t-trends a{
+  text-decoration: none;
+}
+.search ul li{
+  width: 100%;
+}
+.search ul li:hover{
+   background-color:rgb(230, 230, 230);
+}
+.follow-suggestion .follow{
+  font-size: 11px;
+}
+.follow-suggestion input{
+  color: white ;
+  border:none ;
+  padding: 6px 10px;
+  font-size: 18px;
+  border-radius: 30px;
+}
+.footer-right a{
+     font-size: 10px;
+     float: left;
+     padding-right: 0px;
+     list-style-type:none;
+}
+footer .f-right {
+  font-size: 12px;
+  margin-left: 120px;
+}
