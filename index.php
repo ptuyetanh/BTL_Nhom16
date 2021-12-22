@@ -229,8 +229,8 @@
                     <div class="container">
                         <!-- search  -->
                         <form class="d-flex">
-                            <input class="form-control bg-light" type="search" placeholder="Tìm kiếm "
-                                aria-label="Search">
+                            <input class="form-control bg-light fs-2" type="search" placeholder="Tìm kiếm "
+                            aria-label="Search">
                         </form>
                     </div>
                 </nav>
@@ -277,11 +277,11 @@
                                             height="40">
                                     </div>
                                     <div class="col-md-6">
-                                        <span>tên người dùng</span><br>
-                                        <strong>@tên đăng nhập</strong>
+                                        <strong>tên người dùng</strong><br>
+                                        <span>@tên đăng nhập</span>
                                     </div>
                                     <div class="col-md-2">
-                                        <input class="bg-primary" type="submit" id="submit-follow" value="Follow"
+                                        <input class="bg-dark text-light" type="submit" id="submit-follow" value="Follow"
                                             role="button" disabled="true">
                                     </div>
                                 </div>
