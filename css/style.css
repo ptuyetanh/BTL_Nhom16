@@ -278,3 +278,48 @@ footer .f-right {
 .col-md-6 .nav-item:hover{
   background-color:rgb(230, 230, 230);
 }
+/*main-explore*/
+.search-container{
+  border-radius: 30px;
+}
+.input-group{
+  width: 450px;
+  border-radius: 100px;
+  margin-left: 30px;
+}
+.trend_text{
+  margin-top: 60px;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+.trend_text-1{
+  margin-top: 20px;
+}
+.trend_text-1:hover{
+  background-color:rgb(231,233,235) ;
+}
+/*search-explore*/
+.col-md-3 search{
+  width: 40px;
+} 
+.container-fluid row:hover{
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.col-md-2 input{
+  border-radius: 30px;
+}
+
+ .show-more:hover{
+  background-color: rgb(231,233,235);
+}
+.show-more{
+  padding: 15px;
+}
+.show-more a{
+  color: var(--twitter-color);
+}
+.show-more:hover{
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
