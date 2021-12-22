@@ -269,3 +269,12 @@ footer .f-right {
   font-size: 12px;
   margin-left: 120px;
 }
+
+/*notifications*/
+.container .bi2{
+  color: blueviolet;
+ 
+}
+.col-md-6 .nav-item:hover{
+  background-color:rgb(230, 230, 230);
+}
