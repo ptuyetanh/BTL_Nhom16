@@ -280,6 +280,9 @@ footer .f-right {
   background-color:rgb(230, 230, 230);
 }
 /*main-explore*/
+.mainexplore{
+  padding: 0%;
+}
 .search-container{
   border-radius: 30px;
 }
@@ -288,21 +291,25 @@ footer .f-right {
   border-radius: 100px;
   margin-left: 30px;
 }
+.trend_container{
+  padding: 0%;
+
+}
 .trend_text{
   margin-top: 60px;
   margin-bottom: 20px;
   font-size: 20px;
+  margin-left: 10px;
 }
 .trend_text-1{
   margin-top: 20px;
+  
 }
 .trend_text-1:hover{
   background-color:rgb(231,233,235) ;
 }
 /*search-explore*/
-.col-md-3 search{
-  width: 40px;
-} 
+
 .container-fluid row:hover{
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;

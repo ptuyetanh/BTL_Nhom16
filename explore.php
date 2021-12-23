@@ -18,7 +18,8 @@
       <div class="col-md-3 sidebar ">
         shfgsg
       </div>
-      <div class="col-md-6 main border-start border-end ">
+      <!--main-->
+      <div class="col-md-6 mainexplore border-start border-end ">
         <nav class="navbar navbar-light ">
           <form class="container-fluid">
             <div class="input-group">
@@ -70,7 +71,7 @@
             <span class="visually-hidden">Next</span>
           </button>
         </div>
-        <div class="trend container">
+        <div class="trend_container">
           <div class="trend_text">
             <p class="fw-bold">Xu hướng</p>
           </div>
@@ -81,6 +82,7 @@
           </div>
         </div>
       </div>
+      <!--Search-->
       <div class="col-md-3">
         <div class="follow-suggestion mt-4">
           <nav class="navbar navbar-light header-home bg-light">
