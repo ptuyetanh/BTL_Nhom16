@@ -276,9 +276,27 @@ footer .f-right {
   color: blueviolet;
  
 }
-.col-md-6 .nav-item:hover{
+.col-md-6 .navnotifi{
   background-color:rgb(230, 230, 230);
 }
+.notifi .row:hover{
+  background-color:rgb(230, 230, 230);
+}
+.notifi .user{
+  color: blue;
+  
+}
+.mainnotifi{
+  padding: 0%;
+
+}
+.notifi{
+  padding: 0%;
+}
+.notifi .more_notifi{
+  margin-left: 100px;
+}
+
 /*main-explore*/
 .mainexplore{
   padding: 0%;
