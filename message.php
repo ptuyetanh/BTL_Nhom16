@@ -137,7 +137,7 @@
                                 <a class="nav-link" href="#"><i class="bi bi-gear"></i></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark"><i class="bi bi-envelope-plus"></i></a>
+                                <a class="nav-link text-dark" data-bs-toggle="modal" data-bs-target="#model-message" ><i class="bi bi-envelope-plus"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -152,14 +152,17 @@
                 </nav>
                 <hr>
                 <a class="nav-link text-dark" href="#">
-                    <div class="container-fluid row">
+                    <div class="container-fluid row" style="font-size: 14px;">
                         <div class="col-md-2">
                             <img src="./img/no-image.png" alt="" class="rounded-circle" width="40" height="40">
                         </div>
-                        <div class="col-md-10">
+                        <div class="col-md-9">
                             <strong>tên người dùng</strong>
-                            <span>@tên đăng nhập</span>
-                            <span>ngày</span>
+                            <span>@tên đăng nhập</span><br>
+                            <span>tin nhắn</span>
+                        </div>
+                        <div class="col-md-1">
+                             <span>Ngày</span>
                         </div>
                     </div>
                 </a>
