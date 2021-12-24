@@ -397,3 +397,63 @@ footer .f-right {
      border-radius: 40px;
      padding: 8px;
 }
+/*main profile header*/
+.main-header_text{
+  display: flex;
+  position: fixed;
+  top: 0;
+}
+.arrow{
+  margin-right: 30px;
+}
+.text{
+  font-size: 20px;
+}
+.area_main{
+  height: 40px;
+  padding: 0;
+  margin-top: 60px;
+}
+
+#background {
+  height: 235px;
+  width: 900px;
+  margin-top:00px;
+}
+.profile_both{
+  display: flex;
+
+}
+.profile_img img{
+  margin-top: 100px;
+  border-radius: 100px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.profile_btn button{
+  background-color: white;
+  margin-top: 210px;
+  margin-left: 70px;
+  border-radius:30px ;
+
+}
+.profile_btn button:hover{
+ background-color: rgb(231,233,235);
+
+}
+.text-user{
+  margin-top:20px;
+}
+.user_follow a{
+  text-decoration: none;
+  color: black;
+}
+.user_follow a:hover{
+  text-decoration: underline;
+}
+
+.main-profile a:hover{
+  text-decoration: underline;
+  background-color:rgb(231,233,235) 
+}
