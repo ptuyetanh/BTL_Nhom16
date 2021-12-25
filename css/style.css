@@ -276,7 +276,7 @@ footer .f-right {
   color: blueviolet;
  
 }
-.col-md-6 .navnotifi{
+.col-md-6 .navnotifi:hover{
   background-color:rgb(230, 230, 230);
 }
 .notifi .row:hover{
@@ -294,7 +294,12 @@ footer .f-right {
   padding: 0%;
 }
 .notifi .more_notifi{
-  margin-left: 100px;
+  margin-left: 50%;
+}
+.bi-gear:hover{
+  background-color:rgb(230, 230, 230);
+  border-radius: 100%;
+ 
 }
 
 /*main-explore*/
@@ -461,3 +466,101 @@ footer .f-right {
 .header_text{
   font-size: 20px;
 }
+/*list*/
+.main-header_text{
+  display: flex;
+  position: fixed;
+  top: 0;
+}
+.col-md-6 .backlist{
+ border: none;
+ border-radius: 50%;
+ background-color: white;
+margin-right: 7%;
+}
+.col-md-6 .backlist:hover{
+  background-color:rgb(230, 230, 230);
+
+}
+.col-md-6 .new-list{
+  background-color: white;
+  border: none;
+ 
+}
+.col-md-6 .new-list:hover{
+  background-color:rgb(230, 230, 230);
+  border-radius: 100%;
+}
+.more-list:hover{
+  background-color:rgb(230, 230, 230);
+  border-radius: 100%;
+}
+.more-list{
+  background-color: white;
+  border: none;
+}
+.edit-list:hover{
+  background-color: rgb(218, 239, 252);
+ 
+}
+.edit-list{
+  background-color: white;
+  border: none;
+  color: rgb(29,155,240);
+  border-top-right-radius: 70px;
+  border-top-left-radius: 70px;
+  border-bottom-left-radius: 70px;
+  border-bottom-right-radius: 70px;
+  
+}
+.m-list3 .figure-img {
+  width: 50%;
+}
+
+.follow-list{
+  background-color: black;
+  border: none;
+  color: white;
+  border-top-right-radius: 70px;
+  border-top-left-radius: 70px;
+  border-bottom-left-radius: 70px;
+  border-bottom-right-radius: 70px;
+  
+}
+.Discover-new-Lists1:hover{
+  background-color:rgb(230, 230, 230);
+}
+.Discover-new-Lists2:hover{
+  background-color:rgb(230, 230, 230);
+}
+.Discover-new-Lists3:hover{
+  background-color:rgb(230, 230, 230);
+}
+.show-more a
+{text-decoration: none}
+.show-more{
+  color: blue;
+}
+.Your-Lists .bi i{
+  border-radius: 100%;
+ 
+ background-color: white;
+}
+.col-md-6 .YourLists{
+  border: none;
+  border-radius: 100%;
+  background-color: white;
+}
+.col-md-6 .YourLists:hover{
+  background-color:rgb(230, 230, 230)
+}
+.Your-Lists1:hover{
+  background-color:rgb(230, 230, 230)
+}
+.Your-Lists2:hover{
+  background-color:rgb(230, 230, 230)
+}
+.Your-Lists3:hover{
+  background-color:rgb(230, 230, 230)
+}
+
