@@ -16,7 +16,7 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-md-3 sidebar mt-auto">
+            <div class="col-md-3 sidebar">
                 <nav class="navbar navbar-expand-md ">
                     <a class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu"
                         aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,7 +65,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="nav-link btn btn-primary text-light btn_tweet fs-1,8" data-bs-toggle="modal"
+                                <a class="nav-link btn btn-primary text-light btn_tweet fs-3" data-bs-toggle="modal"
                                     data-bs-target="#model-tweet" href="#">
                                     Tweet
                                 </a>

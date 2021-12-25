@@ -159,7 +159,7 @@ footer .footer2{
 }
 .sidebar ul .btn_tweet{
   border-radius: 30px;
-  width: 180px;
+  width: 100%;
   font-size: 24px;
 }
 .sidebar ul .dropup{
@@ -563,4 +563,41 @@ margin-right: 7%;
 .Your-Lists3:hover{
   background-color:rgb(230, 230, 230)
 }
-
+/* main-profile-follow */
+.profile-follow-header nav{
+  position: fixed;
+  top: 0;
+  padding: 0;
+}
+.profile-follow-header nav .bi-arrow-left:hover{
+   background-color: rgb(224, 224, 224);
+   border-radius: 50px;
+}
+.profile-follow-main .Avatar .Avatar_img img{
+   position: absolute;
+   top:190px;
+}
+.profile-follow-main .profile_btnfollow input{
+ border-radius: 30px;
+}
+.profile-follow-main .profile_btnfollow i:hover{
+   border-radius: 50px;
+   background-color: rgb(231, 231, 231);
+}
+.profile-follow-main .Avatar .profile-user-follow a{
+  text-decoration: none;
+}
+.profile-follow-main .Avatar .profile-user-follow a:hover{
+   text-decoration: underline;
+}
+.profile-follow-main .Avatar nav a{
+  color: black;
+}
+.profile-follow-main .Avatar .tweet{
+  color: black !important;
+  border-bottom: 6px solid rgb(123, 169, 255) !important;
+}
+.profile-follow-main .Avatar nav a:hover{
+  background-color: rgb(216, 216, 216);
+  color: black;
+}
