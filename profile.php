@@ -13,13 +13,13 @@
 </head>
 
 <body>
-    <div class="container">
+<div class="container">
         <div class="row">
             <div class="col-md-3 sidebar ">
                 shfgsg
             </div>
             <!--main-->
-            <div class="col-md-6 mainbookmarks border-start border-end ">
+            <div class="col-md-6 mainprofile border-start border-end ">
                 <div class="main-header_text">
                     <div class="arrow">
                         <i class="bi bi-arrow-left"></i>
@@ -28,6 +28,7 @@
                         <strong>Tên người dùng</strong><br>
                         <span>@Tên đăng nhập</span>
                     </div>
+
                 </div>
                 <!--cover area-->
                 <div class="area_main ">
@@ -47,127 +48,33 @@
                         <strong>Tên người dùng</strong><br>
                         <span>@Tên đăng nhập</span>
                     </div>
-                    <ul class="nav nav-tabs mb-3" id="myTab0" role="tablist">
-                        <li class="nav-item" role="presentation">
-                          <button
-                            class="nav-link active"
-                            id="tweet-tab0"
-                            data-mdb-toggle="tab"
-                            data-mdb-target="#tweet0"
-                            type="button"
-                            role="tab"
-                            aria-controls="tweet"
-                            aria-selected="true"
-                          >
-                          Tweets
-                          </button>
-                        </li>
-                        <div class="tab-content" id="myTabContent0">
-                            <section class="post-tweet">
-                      <div class="card mb-3 post border-0" style="max-width: 700px;">
-                          <div class="row g-0">
-                              <div class="col-md-2">
-                                  <img src="./img/no-image.png" alt="" class="rounded-circle ms-5" width="40" height="40">
-                              </div>
-                              <div class="col-md-10 ">
-                                  <div class="post_header container-fluid row">
-                                      <div class="col-md-10 post_header_left">
-                                          <a class="Name " href=""><strong>Tên người dùng</strong></a>
-                                          <span>@tênđăngnhap</span>
-                                          <span>ngày</span>
-                                      </div>
-                                      <div class="col-md-2 post_header_right">
-                                          <i class="bi bi-three-dots "></i>
-                                      </div>
-                                  </div>
-                                  <div class="post_body ms-4">
-                                      <div> post text..... </div>
-                                  </div>
-                                  <div class="post_footer">
-                                      <ul class="nav nav-pills nav-fill mt-3 me-5">
-                                          <li class="nav-item">
-                                            <a class="fs-5" href=""><i class="bi bi-chat"></i></a>
-                                          </li>
-                                          <li class="nav-item ">
-                                            <a class="fs-5" href="#"><i class="bi bi-arrow-left-right"></i></a>
-                                          </li>
-                                          <li class="nav-item">
-                                            <a class=" fs-5" href="#"><i class="bi bi-heart"></i></a>
-                                          </li>
-                                          <li class="nav-item">
-                                            <a class=" fs-5"><i class="bi bi-share"></i></a>
-                                          </li>
-                                        </ul>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </section>
-                          </div>
-                        <li class="nav-item" role="presentation">
-                          <button
-                            class="nav-link"
-                            id="tweet-answer-tab0"
-                            data-mdb-toggle="tab"
-                            data-mdb-target="#tweet-answer0"
-                            type="button"
-                            role="tab"
-                            aria-controls="tweet-answer"
-                            aria-selected="false"
-                          >
-                           Tweet và câu trả lời
-                          </button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                          <button
-                            class="nav-link"
-                            id="contact-tab0"
-                            data-mdb-toggle="tab"
-                            data-mdb-target="#contact0"
-                            type="button"
-                            role="tab"
-                            aria-controls="contact"
-                            aria-selected="false"
-                          >
-                           Phương tiện truyền thông
-                          </button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button
-                              class="nav-link"
-                              id="media-tab0"
-                              data-mdb-toggle="tab"
-                              data-mdb-target="#media0"
-                              type="button"
-                              role="tab"
-                              aria-controls="media"
-                              aria-selected="false"
-                            >
-                             Thích
-                            </button>
-                          </li>
-                      </ul>
-                      <div class="tab-content" id="myTabContent0">
-                        <div
-                          class="tab-pane fade show active"
-                          id="tweet-answer0"
-                          role="tabpanel"
-                          aria-labelledby="like-tab0"
-                        >
-                         
+                    <div class="follow">
+                        <div class="user_follow">
+                            <span>Số người theo dõi</span>
                         </div>
-                        
-                        <div class="tab-content" id="myTabContent0">
-                          Tab 3 content
+                        <div class="number_follow">
+                            <span>Lượt theo dõi</span>
                         </div>
-                      </div>
-                    </div>
                     
 
-
+                    </div>
                 </div>
-
-            </div>
+                <div class="search_bar">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item">
+                          <a class="nav-link text-dark" aria-current="page" href="#">Tweets</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link text-dark two" href="#">Tweets & trả lời</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link text-dark three">Phương tiện truyền thông</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark four">Thích</a>
+                          </li>
+                      </ul>
+                </div>
 
 
 
