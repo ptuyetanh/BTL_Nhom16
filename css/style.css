@@ -283,7 +283,7 @@ footer .f-right {
   background-color:rgb(230, 230, 230);
 }
 .notifi .user{
-  color: blue;
+   color: rgb(29,155,240);;
   
 }
 .mainnotifi{
@@ -300,6 +300,29 @@ footer .f-right {
   background-color:rgb(230, 230, 230);
   border-radius: 100%;
  
+}
+.notifi1:hover{
+  background-color:rgb(230, 230, 230);
+}
+.notifi{
+ padding: 2%;
+  margin: 0%;
+}
+.notifi .bi2{
+  padding: 0%;
+}
+.bitim{
+  color: rgb(249,24,128);
+}
+.Namenotifi:hover{
+  text-decoration: underline;
+}
+.Namenotifi{
+  text-decoration: none;
+  color: black;
+}
+.post_header-notifi{
+  padding: 0%;
 }
 
 /*main-explore*/
@@ -562,6 +585,9 @@ margin-right: 7%;
 }
 .Your-Lists3:hover{
   background-color:rgb(230, 230, 230)
+}
+.mainlist{
+  padding: 0%;
 }
 /* main-profile-follow */
 .profile-follow-header nav{
