@@ -1,23 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Twitter</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="./css/style.css">
-</head>
-
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">hgdhj</div>
-            <div class="col-md-4 message-left border-start border-end border-left">deafed</div>
+<?php
+     include("template/sidebar.php")
+?>
+            <!-- main message -->
+            <div class="col-md-4 message-left border-start border-end">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">Tin nhắn</a>
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item text-dark ">
+                                <a class="nav-link" href="#"><i class="bi bi-gear"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" data-bs-toggle="modal" data-bs-target="#model-message" ><i class="bi bi-envelope-plus"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <nav class="navbar navbar-light">
+                    <div class="container-fluid">
+                        <form class="d-flex">
+                            <input class="form-control fs-2" type="" placeholder="Tìm kiếm người và nhóm"
+                                aria-label="Search">
+                        </form>
+                    </div>
+                </nav>
+                <hr>
+                <a class="nav-link text-dark" href="#">
+                    <div class="container-fluid row" style="font-size: 14px;">
+                        <div class="col-md-2">
+                            <img src="./img/no-image.png" alt="" class="rounded-circle" width="40" height="40">
+                        </div>
+                        <div class="col-md-9">
+                            <strong>tên người dùng</strong>
+                            <span>@tên đăng nhập</span><br>
+                            <span>tin nhắn</span>
+                        </div>
+                        <div class="col-md-1">
+                             <span>Ngày</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
             <!--Thiết kế khung chat để gán vào file message.php -->
             <div class="col-md-5  message-right border-end " style="padding: 0;">
                 <div class="chat-header">
@@ -25,11 +48,11 @@
                         <div class="container-fluid">
                             <a class="nav-link text-dark" href="#">
                                 <div class="container-fluid row">
-                                    <div class="col-md-3">
-                                        <img src="./img/no-image.png" alt="" class="rounded-circle me-5 mt-1" width="37"
+                                    <a class="col-md-2" href="profile-follow.php">
+                                        <img src="./img/no-image.png" alt="" class="rounded-circle mt-1" width="37"
                                             height="38">
-                                    </div>
-                                    <div class="col-md-9 ">
+                                    </a>
+                                    <div class="col-md-10">
                                         <strong>tên người dùng</strong><br>
                                         <span>@tên đăng nhập</span>
                                     </div>
