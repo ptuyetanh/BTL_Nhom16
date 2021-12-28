@@ -89,9 +89,9 @@ footer .footer2{
       color: dodgerblue;
       font-size: 50px;
       margin-left: 120px;
-     
-      
-  }
+ }
+
+
   .btn{
   border-radius: 25px;
   }
@@ -283,7 +283,7 @@ footer .f-right {
   background-color:rgb(230, 230, 230);
 }
 .notifi .user{
-   color: rgb(29,155,240);;
+   color: rgb(29,155,240);
   
 }
 .mainnotifi{
