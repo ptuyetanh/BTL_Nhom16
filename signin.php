@@ -27,6 +27,12 @@
             <label>
               <input type="checkbox" value="remember-me"> Hiển thị mật khẩu
             </label>
+            <?php
+                    if(isset($_GET['error'])){
+                        echo "<h5 style='color:red'> {$_GET['error']} </h5>";
+                    }
+
+            ?>
           </div>
           <button class="w-100 btn btn-lg btn-primary" type="submit">Đăng nhập</button>
           <p class="mt-5 mb-3 text-muted footer-copy">&copy; 2021</p>
