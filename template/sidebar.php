@@ -126,6 +126,12 @@
                                     <li><a class="dropdown-item" href="#">Đăng xuất </a></li>
                                 </ul>
                             </li>
+                            <?php
+                               if(isset($_SESSION['isSignInOK'])){
+                                   echo '<li class = "nav-item">';
+                                   echo "<a class = 'nav-link' href='logout.php'>Đăng xuất</a>";
+                               }
+                            ?>
                         </ul>
                     </div>
                 </nav>
