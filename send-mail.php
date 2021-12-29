@@ -1,6 +1,6 @@
 <?php
-    $username = 'phamtuyetanh2@gmail.com';
-    $pass = 'yruispzthzenrjhx';
+    $username = 'btlnhom16twitter@gmail.com';
+    $pass = 'ihbkhareptxlpduq';
     //khai bao 
     
     //Import PHPMailer classes into the global namespace
@@ -16,7 +16,7 @@ require 'PHPMailer/Exception.php';
 require 'PHPMailer/PHPMailer.php';
 require 'PHPMailer/SMTP.php';
     //2.su dung thư viện này để gửi Email(localhost) tới 1 tài khoản bất kì
- function sendEmailForAccountActive($email){
+ function sendEmailForAccountActive($email,$link){
     //Create an instance; passing `true` enables exceptions
     global $username;
     global $pass;
@@ -35,7 +35,7 @@ try {
     $mail->CharSet = 'UTF-8';                              //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom('phamtuyetanh2@gmail.com','04_PhamTuyetAnh');
+    $mail->setFrom('btlnhom16twitter@gmail.com','Twitter');
     $mail->addAddress($email);     //Add a recipient    //Add a recipient
     // $mail->addAddress('ellen@example.com');               //Name is optional
     // $mail->addReplyTo('info@example.com', 'Information');
@@ -47,11 +47,11 @@ try {
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = '[Twitter]Active your account';
-    $mail->Body    = 'Chào mừng bạn đến với twitter.Dể sử dụng tài khoản vui lòng nhấp <a href="http://localhost/Twitter/BTL_Nhom16/signin.php">Click here</a> để kích hoạt';
+    $mail->Subject = '[Twitter]Kích hoạt tài khoản của bạn';
+    $mail->Body    = 'Chào mừng bạn đến với Twitter.Để sử dụng tài khoản,'.$link;
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
-   if($mail->send){
+   if($mail->send()){
        return true;
    }
    

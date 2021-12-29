@@ -32,44 +32,14 @@ if(isset($_POST['btnsignup']) && $_POST['txtemail'])//kiểm tra người dùng 
             $result02 = mysqli_query($conn,$sql02);
             //Sau khi lưu xong chúng ta cần gửi tới email đăng kí đường link tới website của chúng ta 
             //yêu cầu người dùng kích hoạt ;biến link sẽ được gửi vào email
-            $link = "<a href='localhost/Twitter1/BTL_Nhom16/activation.php?key=".$email."&token=".$token."'>Nhấp vào đây để kích hoạt</a>";
+            $link = "<a href='localhost/Twitter/BTL_Nhom16/activation.php?key=".$email."&token=".$token."'>Nhấp vào đây để kích hoạt</a>";
            include "send-mail.php";
            if(sendEmailForAccountActive($email,$link)){
-               echo "vui lòng kiểm tra hộp thư của bạn để kích hoạt tài khoản";
+               echo "Vui lòng kiểm tra hộp thư của bạn để kích hoạt tài khoản";
            }
            else{
                echo "Xin lỗi email chưa được gửi đi .Vui lòng kiểm tra lại thông tin đăng kí tài khoản";
            }
-            //Quá trình gửi email
-            // require_once('phpmail/PHPMailerAutoload.php');
-            // $mail = new PHPMailer();
-            // $mail->CharSet =  "utf-8";
-            // $mail->IsSMTP();
-            // // enable SMTP authentication
-            // $mail->SMTPAuth = true;                  
-            // // GMAIL username
-            // $mail->Username = "your_email_id@gmail.com";
-            // // GMAIL password
-            // $mail->Password = "your_gmail_password";
-            // $mail->SMTPSecure = "ssl";  
-            // // sets GMAIL as the SMTP server
-            // $mail->Host = "smtp.gmail.com";
-            // // set the SMTP port for the GMAIL server
-            // $mail->Port = "465";
-            // $mail->From='your_gmail_id@gmail.com';
-            // $mail->FromName='your_name';
-            // $mail->AddAddress('reciever_email_id', 'reciever_name');
-            // $mail->Subject  =  'Reset Password';
-            // $mail->IsHTML(true);
-            // $mail->Body    = 'Click On This Link to Verify Email '.$link.'';
-            // if($mail->Send())
-            // {
-            //     echo "Check Your Email box and Click on the email verification link.";
-            // }
-            // else
-            // {
-            // echo "Mail Error - >".$mail->ErrorInfo;
-            // }
         }
         // else
         // {
