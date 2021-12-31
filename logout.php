@@ -3,6 +3,6 @@
 
    if(isset($_SESSION['isSignInOK'])){
        unset($_SESSION['isSignInOK']);
-       header("location:index.php");
    }
+   header("location:index.php");
 ?>
