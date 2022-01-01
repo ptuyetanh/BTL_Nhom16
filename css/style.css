@@ -459,31 +459,88 @@ footer .f-right {
   cursor: pointer;
 }
 
-.profile_btn button{
-  background-color: white;
-  margin-top: 210px;
+.profile_btn a{
+  margin-top: 220px;
   margin-left: 70px;
-  border-radius:30px ;
-
+  border:1px solid rgb(204, 203, 203);
 }
-.profile_btn button:hover{
+.profile_btn a:hover{
  background-color: rgb(231,233,235);
 
 }
-.text-user{
-  margin-top:20px;
-}
-.user_follow a{
+.profile-user a{
   text-decoration: none;
+}
+.profile-user a:hover{
+   text-decoration: underline;
+}
+.profile-menu a{
   color: black;
 }
-.user_follow a:hover{
-  text-decoration: underline;
+.profile-menu .tweet{
+  color: black !important;
+  border-bottom: 6px solid rgb(123, 169, 255) !important;
 }
-
-.main-profile a:hover{
-  text-decoration: underline;
-  background-color:rgb(231,233,235) 
+.profile-menu a:hover{
+  background-color: rgb(216, 216, 216);
+  color: black;
+}
+/* modal-profile */
+.modal-body-profile .modal_coverimage .file_camera{
+    position: absolute;
+    top:150px;
+    margin-left: 360px;
+    cursor: pointer;
+}
+.modal-body-profile .modal_coverimage .file_camera input{
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 0;
+  left: 0;
+  bottom:0;
+  font-size: 0;
+  cursor: pointer;
+}
+.modal-body-profile .modal_coverimage .file_camera i:hover{
+  background-color: rgb(214, 214, 214);
+  border-radius: 100%;
+ 
+}
+.modal-body-profile .modal_Avatar img{
+  position: absolute;
+  top: 200px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.modal-body-profile .modal_Avatar .file_camera{
+  position: absolute;
+  top:270px;
+  margin-left: 80px;
+  cursor: pointer;
+}
+.modal-body-profile .modal_Avatar .file_camera input{
+position: absolute;
+top: 0;
+right: 0;
+height: 100%;
+width: 0;
+left: 0;
+bottom:0;
+font-size: 0;
+cursor: pointer;
+}
+.modal-body-profile .modal_Avatar .file_camera i:hover{
+  background-color: rgb(214, 214, 214);
+  border-radius: 100%;
+ 
+}
+.modal-body-profile .profile-input{
+  margin-top: 80px;
+}
+.modal-body-profile .profile-input #birthday{
+  border: 1px solid rgb(206, 206, 206);
 }
 /*mainbookmarks*/
 .header_text{
