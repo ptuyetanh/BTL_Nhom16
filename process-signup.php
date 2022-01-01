@@ -25,7 +25,6 @@ if(isset($_POST['btnsignup']) && $_POST['txtemail'])//kiểm tra người dùng 
         }else//Kiểm tra email chưa được dùng (mysqli_num_rows($result01) <= 0)
         {
             $token = md5($_POST['txtemail']).rand(10,9999);//sử dụng giải thuật md5 để sinh ra chuỗi ngẫu nhiên được băm
-            $pass_md5 = md5($pass1);
             $pass_hash = password_hash($pass1,PASSWORD_DEFAULT );
             //ra lệnh lưu vào CSDL
             $sql02 = "INSERT INTO db_nguoidung (tendangnhap,email ,matkhau,tennguoidung,email_verification_link) VALUES ('$user','$email','$pass_hash','$name','$token')";

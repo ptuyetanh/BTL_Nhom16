@@ -9,12 +9,14 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./js/script.js"></script>
 </head>
 <body>
     
 <main class="form-signin mb-5">
     <div class="container">
-        <form class="form-signup" action="process-signup.php" method="post"> 
+        <form class="form-signup" autocomplete action="process-signup.php" method="post"> 
             <i class="bi bi-twitter"></i>
             <h1 class="h3 mb-3 fw-normal"> Đăng ký twitter</h1>
             <div class="form-floating">
@@ -26,8 +28,9 @@
                 <label for="txtuser">Tên đăng nhập</label>
               </div> 
             <div class="form-floating">
-              <input type="email" class="form-control" id="inputemail" name = "txtemail" placeholder="name@example.com" required autofocus>
+              <input type="email" class="form-control" id="inputemail" name = "txtemail" placeholder="name@example.com" required autofocus aria-describedby="emailHelp">
               <label for="inputemail">Email </label>
+              <small id="emailHelp" class="form-text"></small>
             </div>
             <div class="form-floating">
               <input type="password" class="form-control" id="inputpassword" name = "txtPass1" placeholder="Password" required>
@@ -35,7 +38,7 @@
             </div>
             <div class="form-floating">
                 <input type="password" class="form-control" id="inputretypepassword" name = "txtPass2" placeholder="Password" required>
-                <label for="inputretypepassword">Mật khẩu</label>
+                <label for="inputretypepassword">Nhập lại mật khẩu</label>
               </div>
               <label >
                 <input type="checkbox" value="remember-me"> Hiển thị mật khẩu 

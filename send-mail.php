@@ -1,6 +1,6 @@
 <?php
-    $username = 'btlnhom16twitter@gmail.com';
-    $pass = 'ihbkhareptxlpduq';
+    $username = 'phamtuyetanh2@gmail.com';
+    $pass = 'gsipgsbyjvnogfpu';
     //khai bao 
     
     //Import PHPMailer classes into the global namespace
@@ -35,7 +35,7 @@ try {
     $mail->CharSet = 'UTF-8';                              //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom('btlnhom16twitter@gmail.com','Twitter');
+    $mail->setFrom('phamtuyetanh2@gmail.com','Twitter');
     $mail->addAddress($email);     //Add a recipient    //Add a recipient
     // $mail->addAddress('ellen@example.com');               //Name is optional
     // $mail->addReplyTo('info@example.com', 'Information');
