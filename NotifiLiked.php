@@ -1,5 +1,6 @@
 <?php
      include("template/sidebar.php");
+     $page_tittle="Twitter/Like";
 ?>
 <div class="col-md-6">
   <div class="container">

@@ -1,5 +1,6 @@
 <?php
      include("template/sidebar.php");
+     $page_tittle="Twitter/Theo dõi";
 ?>
             <!-- main-profile-follow -->
             <main class="col-md-6  main-profile-follow border-start border-end">

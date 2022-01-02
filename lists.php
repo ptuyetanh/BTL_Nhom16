@@ -5,6 +5,7 @@
     if(!isset($_SESSION['isSigninOK'])){
       header("location:signin.php");
     }
+    $page_tittle="Twitter/Danh sách";
      include("template/sidebar.php");
 ?>
       <div class="col-md-6">

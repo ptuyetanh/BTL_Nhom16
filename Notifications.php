@@ -5,6 +5,7 @@
     if(!isset($_SESSION['isSigninOK'])){
       header("location:signin.php");
     }
+    $page_tittle="Twitter/Thông báo";
      include("template/sidebar.php");
 ?>
       <div class="col-md-6 mainnotifi border-start border-end">
