@@ -32,6 +32,7 @@
                                 <a class="nav-link link-dark" href="index.php"><i class="bi bi-house-door me-3"></i>
                                     Trang chủ
                                 </a>
+                                
                             </li>
                             <li class="nav-item fs-5 p-0,5 mb-2">
                                 <a class="nav-link link-dark" href="explore.php"><i class="bi bi-hash me-3"></i>
@@ -123,12 +124,18 @@
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item" href="#">Đăng xuất </a></li>
+                                    <li><a class="dropdown-item" href="logout.php">Đăng xuất</a></li>
+                                   
+                                    
+                                   
+           
                                 </ul>
                             </li>
-                            <li><a class="dropdown-item" href="logout.php">Đăng xuất</a></li>
-                                   
+                           
+                            
                         </ul>
                     </div>
                 </nav>
+                 
             </div>
+            
