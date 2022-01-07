@@ -22,3 +22,39 @@ $(document).ready(function(){
          // 1 Cách dùng Ajax tôi ko cần submit tôi chỉ cần rời khỏi ô nhập là nó gửi
      })
    })
+   $(document).ready(function(){
+     $("#inputpassword1").change(function(){
+         let passPatterm = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+         //Tối thiểu tám ký tự, ít nhất một chữ cái viết hoa, một chữ cái viết thường và một số:
+         if(passPatterm.test($("#inputpassword1").val()) == false){
+             $("#pass1Help").text("Mật khẩu Tối thiểu tám ký tự, ít nhất một chữ cái viết hoa, một chữ cái viết thường và một số").css("color","red");
+         }else{
+            $.ajax ({
+                url:"check-passSignup.php",
+                type:"Post",
+                data:{password1:$(this).val()},
+                //callback funtion 
+                success:function(re){
+                    $("#pass1Help").text(re).css("color","green");
+                }
+            })
+         }
+     })
+   })
+//xử lý sìdebar
+$(function(){
+//alert ("jwhsdeiuwq");
+ let path=window.location.href;
+ $('#sidebarMenu ul li a').each(function(){
+     if(this.href==path){
+        $(this).addClass('active')
+     }
+ })
+})
+//xử lý nút post
+$(document).on("keyup","#content_status",function(e){
+    e.prevenDefault();
+    let textbox=$(e.target);
+    let value =textbox.val().trim();
+    let submitButtom=$("#submit-tweet-button");
+})

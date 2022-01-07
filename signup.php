@@ -10,11 +10,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="./js/script.js"></script>
 </head>
 <body>
     
-<main class="form-signin mb-5">
+<main class="form-signin mt-5">
     <div class="container">
         <form class="form-signup" autocomplete action="process-signup.php" method="post"> 
             <i class="bi bi-twitter"></i>
@@ -33,12 +34,22 @@
               <small id="emailHelp" class="form-text"></small>
             </div>
             <div class="form-floating">
-              <input type="password" class="form-control" id="inputpassword1" name = "txtPass1" placeholder="Password" required>
-              <label for="inputpassword">Mật khẩu</label>
+              <input type="password" class="form-control" id="inputpassword1" name = "txtPass1" placeholder="Password" required autofocus aria-describedby="pass1Help">
+              <label for="inputpassword1">Mật khẩu</label>
+              <small id="pass1Help" class="form-text"></small>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" id="inputpassword2" name = "txtPass2" placeholder="Password" required>
+                <input type="password" class="form-control" id="inputpassword2" name = "txtPass2" placeholder="Password" required autofocus aria-describedby="pass2Help">
                 <label for="inputpassword2">Nhập lại mật khẩu</label>
+                <span id='message'></span>
+                <script>
+                  $('#inputpassword1, #inputpassword2').on('keyup', function () {
+                    if ($('#inputpassword1').val() == $('#inputpassword2').val()) {
+                        $('#message').text('Mật khẩu khớp').css('color', 'green');
+                    } else 
+                        $('#message').text('Mật khẩu không khớp').css('color', 'red');
+                   });
+                </script>
             </div>
             <div class="checkbox mb-3">
             <label >
@@ -52,11 +63,9 @@
                 ?>
             </div>
             <button class="w-100 btn btn-lg btn-primary" type="submit" name = "btnsignup">Đăng nhập</button>
-            
-            <p class="mt-5 mb-3 text-muted copy">&copy; 2021</p>
           </form>
-       
-      
+     </div>
+  </main>
     <script src="./js/showpassword.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
