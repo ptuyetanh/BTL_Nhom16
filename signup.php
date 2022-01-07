@@ -62,7 +62,7 @@
 
                 ?>
             </div>
-            <button class="w-100 btn btn-lg btn-primary" type="submit" name = "btnsignup">Đăng nhập</button>
+            <button class="w-100 btn btn-lg btn-primary" type="submit" name = "btnsignup">Đăng kí</button>
           </form>
      </div>
   </main>

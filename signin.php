@@ -15,7 +15,7 @@
             <i class="bi bi-twitter"></i>
             <h4>Đăng nhập vào Twitter</h4>
           <div class="form-floating">
-            <input type="email" id="inputEmail" name="txtUser" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <input type="text" id="inputEmail" name="txtUser" class="form-control" id="floatingInput" placeholder="name@example.com">
             <label for="floatingInput">Tên đăng nhập </label>
           </div>
           <div class="form-floating">
