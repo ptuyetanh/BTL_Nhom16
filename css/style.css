@@ -684,3 +684,45 @@ margin-right: 7%;
   background-color: rgb(216, 216, 216);
   color: black;
 }
+/*admin-login */
+.form-loginadmin .bi-twitter{
+  font-size: 50px;
+  color: rgb(29, 155, 240);
+  margin-left:120px;
+}
+.form-loginadmin{
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin:auto;
+  margin-top:110px;
+}
+
+.form-loginadmin .checkbox{
+  font-weight: 400;
+}
+
+.form-loginadmin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-loginadmin input[type="tên đăng nhập"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-loginadmin input[type="mật khẩu"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.form-loginadmin.btn{
+    border-radius: 30px;
+}
+.form-loginadmin.footer-copy{
+  margin-left: 120px;
+}
+.input-group-text {
+border-radius: 100px;
+}
