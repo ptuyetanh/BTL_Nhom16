@@ -51,10 +51,16 @@ $(function(){
      }
  })
 })
-//xử lý nút post
-$(document).on("keyup","#content_status",function(e){
-    e.prevenDefault();
-    let textbox=$(e.target);
-    let value =textbox.val().trim();
-    let submitButtom=$("#submit-tweet-button");
-})
+//xử lý nút post(chạy không vào)
+let textarea = document.querySelector("#content_status");
+let inputButton = document.querySelector("#submit-tweet-button");
+textarea.addEventListener("change",stateHandle);
+inputButton.disabled= true;
+function stateHandle(){
+    if(document.querySelector("#content_status").value === ""){
+        inputButton.disabled=true; 
+    }else{
+        inputButton.disabled=false; 
+    }
+
+}

@@ -1,4 +1,12 @@
 <?php
+    // trước khi cho người dùng xâm nhập vào bên trong
+    // phải kiểm tra Thẻ làm việc
+    session_start();
+    if(!isset($_SESSION['isSigninOK'])){
+        header("location:signin.php");
+    }
+?>
+<?php
      include("template/sidebar.php");
      $page_tittle="Twitter/Theo dõi";
 ?>
@@ -8,7 +16,7 @@
                     <nav class="navbar navbar-light">
                         <div class="container-fluid">
                             <div class="col-md-1">
-                            <a href="index.php" class="navbar-brand"><i class="bi bi-arrow-left"></i></a>
+                            <a href="home.php" class="navbar-brand"><i class="bi bi-arrow-left"></i></a>
                         </div>
                         <div class="col-md-10">
                             <a class="navbar-brand" href="#">

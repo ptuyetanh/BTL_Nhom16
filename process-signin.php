@@ -24,9 +24,10 @@
             if(mysqli_stmt_fetch($stmt)){
                 // echo $pass;
                 // echo $matkhau;
-                if(password_verify($pass,$matkhau)){
-                    $_SESSION['isSigninOK'] = $email;
+                if(password_verify($pass,$matkhau) && $status===1){
+                    $_SESSION['isSigninOK'] = $ma_nguoidung; 
                     header("location:home.php");
+                    mysqli_close($conn);
                 }else{
                     mysqli_close($conn);
                     $error="Tài khoản và mật khẩu không chính xác!";

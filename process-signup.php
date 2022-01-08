@@ -1,4 +1,12 @@
 <?php
+    // trước khi cho người dùng xâm nhập vào bên trong
+    // phải kiểm tra Thẻ làm việc
+    session_start();
+    if(!isset($_SESSION['isSigninOK'])){
+        header("location:signin.php");
+    }
+?>
+<?php
 if(isset($_POST['btnsignup']) && $_POST['txtemail'])//kiểm tra người dùng nhấp vào nút submit chưa và đã nhập email chưa
 {   // header("location:signup.php");
         //coi dữ liệu là hợp lệ
@@ -15,7 +23,6 @@ if(isset($_POST['btnsignup']) && $_POST['txtemail'])//kiểm tra người dùng 
         // Bước 02: Thực hiện truy vấn
         $sql01 = "SELECT * FROM db_nguoidung WHERE email = '$email'  OR	tendangnhap='$user'";
         // Ở đây còn có các vấn đề về tính hợp lệ dữ liệu nhập vào FORM
-        // Nghiêm trọng: lỗi SQL Injection
 
         $result01 = mysqli_query($conn,$sql01);
         $result01 = mysqli_query($conn,"SELECT * FROM db_nguoidung WHERE email='$email'");

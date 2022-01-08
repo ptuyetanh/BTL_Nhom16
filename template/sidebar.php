@@ -1,3 +1,15 @@
+<?php
+    //Kết nối cơ sở dữ liệu 
+    $conn = mysqli_connect('localhost','root','','twitter');
+        if(!$conn){
+            die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
+        }
+    //truy vấn cơ sở dữ liệu
+        $sql = "SELECT * FROM db_nguoidung WHERE ma_nguoidung ";
+        $result =mysqli_query($conn,$sql);
+        if(mysqli_num_rows($result)){
+            while($row =mysqli_fetch_assoc($result)){
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,6 +23,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="./img/logo.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./js/script.js"></script>
 </head>
@@ -27,11 +40,11 @@
                     <div class="collapse navbar-collapse" id="sidebarMenu">
                         <ul class="navbar-nav flex-column">
                             <div class="nav-item fs-5  p-0,5 mb-2 twitter-home">
-                                <a class=" navbar-brand ms-2" href="index.php">
+                                <a class=" navbar-brand ms-2" href="home.php">
                                     <i class="bi bi-twitter text-primary p-2 "></i></a>
                             </div>
                             <li class="nav-item fs-5  p-0,5 mb-2">
-                                <a class="nav-link link-dark" href="index.php"><i class="bi bi-house-door me-3"></i>
+                                <a class="nav-link link-dark" href="home.php"><i class="bi bi-house-door me-3"></i>
                                     Trang chủ
                                 </a>
                                 
@@ -102,8 +115,8 @@
                                                 width="32" height="32">
                                         </div>
                                         <div class="col-md-8">
-                                            <span>Tên người dùng</span><br>
-                                            <strong>@Tên đăng nhập</strong>
+                                               <span><?php echo $row['tennguoidung'];?></span><br>
+                                               <strong>@<?php echo $row['tendangnhap'];?></strong>
                                         </div>
                                     </div>
                                 </a>
@@ -115,8 +128,8 @@
                                                         width="23" height="23">
                                                 </div>
                                                 <div class="col-md-10">
-                                                    <span>Tên người dùng</span><br>
-                                                    <strong>Tên đăng nhập </strong>
+                                                    <span><?php echo $row['tennguoidung'];?></span><br>
+                                                    <strong>@<?php echo $row['tendangnhap'];?> </strong>
                                                 </div>
                                             </div>
                                         </a>
@@ -140,4 +153,7 @@
                 </nav>
                  
             </div>
-            
+<?php
+    }
+ }
+ ?>

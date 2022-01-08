@@ -426,11 +426,11 @@ footer .f-right {
      padding: 8px;
 }
 /*main profile header*/
-.main-header_text{
+/* .main-header_text{
   display: flex;
   position: fixed;
   top: 0;
-}
+} */
 .arrow{
   margin-right: 30px;
 }
@@ -647,11 +647,11 @@ margin-right: 7%;
   padding: 0%;
 }
 /* main-profile-follow */
-.profile-follow-header nav{
+/* .profile-follow-header nav{
   position: fixed;
   top: 0;
   padding: 0;
-}
+} */
 .profile-follow-header nav .bi-arrow-left:hover{
    background-color: rgb(224, 224, 224);
    border-radius: 50px;
