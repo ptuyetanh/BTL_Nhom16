@@ -1,10 +1,10 @@
 <?php
     // trước khi cho người dùng xâm nhập vào bên trong
     // phải kiểm tra Thẻ làm việc
-    session_start();
-    if(!isset($_SESSION['isSigninOK'])){
-      header("location:signin.php");
-    }
+    // session_start();
+    // if(!isset($_SESSION['isSigninOK'])){
+    //   header("location:signin.php");
+    // }
     $page_tittle="Twitter/Thông báo";
      include("template/sidebar.php");
 ?>
@@ -19,16 +19,7 @@
         </div>
         <div>
           <!-- Tabs navs -->
-          <ul class="nav nav-tabs nav-fill mb-3" id="ex1" role="tablist">
-            <li class="nav-item navnotifi" role="presentation">
-              <a class="nav-link active text-dark" id="ex2-tab-1" data-mdb-toggle="tab" href="#ex2-tabs-1" role="tab"
-                aria-controls="ex2-tabs-1" aria-selected="true"><b>Tất cả</b></a>
-            </li>
-            <li class="nav-item navnotifi" role="presentation">
-              <a class="nav-link text-dark" id="ex2-tab-2" data-mdb-toggle="tab" href="#ex2-tabs-2" role="tab"
-                aria-controls="ex2-tabs-2" aria-selected="false"><b>Đề cập</b></a>
-            </li>
-          </ul>
+
           <!-- Tabs navs -->
         </div>
         <div >
