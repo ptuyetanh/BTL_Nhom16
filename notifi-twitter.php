@@ -1,12 +1,4 @@
 <?php
-    // trước khi cho người dùng xâm nhập vào bên trong
-    // phải kiểm tra Thẻ làm việc
-    session_start();
-    if(!isset($_SESSION['isSigninOK'])){
-        header("location:signin.php");
-    }
-?>
-<?php
      include("template/sidebar.php");
 ?>
 <div class="col-md-6">

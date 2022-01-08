@@ -1,11 +1,16 @@
 <?php
+     session_start();
+     if(!isset($_SESSION['isSigninOK'])){
+         header("location:signin.php");
+     }
+     $ma_nguoidung = $_SESSION['isSigninOK'];
     //Kết nối cơ sở dữ liệu 
     $conn = mysqli_connect('localhost','root','','twitter');
         if(!$conn){
             die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
         }
     //truy vấn cơ sở dữ liệu
-        $sql = "SELECT * FROM db_nguoidung WHERE ma_nguoidung ";
+        $sql = "SELECT * FROM db_nguoidung WHERE ma_nguoidung = $ma_nguoidung ";
         $result =mysqli_query($conn,$sql);
         if(mysqli_num_rows($result)){
             while($row =mysqli_fetch_assoc($result)){

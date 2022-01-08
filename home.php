@@ -1,28 +1,22 @@
 <?php
     // trước khi cho người dùng xâm nhập vào bên trong
     // phải kiểm tra Thẻ làm việc
-    session_start();
-    if(!isset($_SESSION['isSigninOK'])){
-        header("location:signin.php");
-    }
     $page_tittle="Twitter/Trang chủ";
      include("template/sidebar.php");
 ?>
             <!-- main  -->
             <main class="col-md-6 main border-start border-end">
                 <!-- header-home  -->
-                <nav class="navbar navbar-expand-lg navbar-light header-home">
-                    <div class="container-fluid home_main">
-                        <a class="navbar-brand ms-4 mt-2" href="home.php">
-                            <strong>Trang chủ</strong>
-                        </a>
+                <nav class="navbar navbar-light header-home ">
+                    <div class="container">
+                        <strong class="fs-4 ms-4">Trang chủ</strong>
                     </div>
-                </nav>
+               </nav>
                 <!-- tweet-status  -->
-                <div class="tweet-status mt-5">
+                <div class="tweet-status">
                     <!-- status  -->
                     <div class="card mb-3 status border-0" style="max-width: 700px;">
-                        <div class="row g-0 ">
+                        <div class="row">
                             <div class="col-md-2">
                                 <img src="./img/no-image.png" alt="" class="rounded-circle ms-5" width="35" height="35">
                             </div>

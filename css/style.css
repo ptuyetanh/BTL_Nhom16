@@ -426,7 +426,7 @@ footer .f-right {
      padding: 8px;
 }
 /*main profile header*/
-/* .main-header_text{
+/* .main .header-home{
   display: flex;
   position: fixed;
   top: 0;
@@ -647,18 +647,18 @@ margin-right: 7%;
   padding: 0%;
 }
 /* main-profile-follow */
-/* .profile-follow-header nav{
+.profile-follow-header nav{
   position: fixed;
   top: 0;
   padding: 0;
-} */
+}
 .profile-follow-header nav .bi-arrow-left:hover{
    background-color: rgb(224, 224, 224);
    border-radius: 50px;
 }
 .profile-follow-main .Avatar .Avatar_img img{
    position: absolute;
-   top:190px;
+   top:200px;
 }
 .profile-follow-main .profile_btnfollow input{
  border-radius: 30px;
