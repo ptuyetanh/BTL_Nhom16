@@ -21,7 +21,7 @@
                                 <img src="./img/no-image.png" alt="" class="rounded-circle ms-5" width="35" height="35">
                             </div>
                             <div class="col-md-10">
-                                <form action="" method="">
+                                <form action="process-tweet.php" method="post">
                                     <textarea name="content_status" placeholder="Bạn đang nghĩ gì?"
                                         aria-label="Bạn đang nghĩ gì" id="content_status" autofocus></textarea>
                                     <div id="tweet_post">
@@ -49,17 +49,17 @@
                                                 <input class="bg-primary" type="submit" id="submit-tweet-button"
                                                     value="Tweet" role="button">
                                             </div>
-                                            <!-- <SCript>
+                                            <SCript>
                                                 $(document).ready(function(){
-                                                    $('#content_status').on('input change',function(){
-                                                        if($(this).val() = ""){
+                                                    $('#content_status').change(function(){
+                                                        if($(this).val() =""){
                                                             $('#submit-tweet-button').prop('disabled',true);
                                                         }else{
                                                             $('#submit-tweet-button').prop('disabled',false);
                                                         }
                                                     });
                                                 });
-                                            </SCript> -->
+                                            </SCript>
                                         </div>
                                     </div>
                                 </form>
@@ -69,6 +69,17 @@
                 </div>
                 <hr>
                 <!-- post-tweet  -->
+                <?php
+                        $conn = mysqli_connect('localhost','root','','twitter');
+                        if(!$conn){
+                            die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
+                        }
+                        //truy vấn cơ sở dữ liệu
+                        $sql = "SELECT * FROM db_nguoidung INNER JOIN tweet WHERE db_nguoidung.ma_nguoidung = $ma_nguoidung";
+                        $result =mysqli_query($conn,$sql);
+                        if(mysqli_num_rows($result)){
+                            while($row =mysqli_fetch_assoc($result)){
+                ?>
                 <section class="post-tweet">
                     <div class="card mb-3 post border-0" style="max-width: 700px;">
                         <div class="row g-0">
@@ -78,9 +89,54 @@
                             <div class="col-md-9 ">
                                 <div class="post_header container-fluid row">
                                     <div class="col-md-10 post_header_left">
-                                        <a class="Name " href="profile-follow.php"><strong>Tên người dùng</strong></a>
-                                        <span>@tênđăngnhap</span>
-                                        <span>ngày</span>
+                                        <a class="Name " href="profile.php"><strong><?php echo $row['tennguoidung'];?></strong></a>
+                                        <span>@<?php echo $row['tendangnhap'];?></span>
+                                        <span class ="date"><?php echo $row['postedOn'];?></span>
+                                    </div>
+                                    <div class="col-md-2 post_header_right">
+                                        <i class="bi bi-three-dots "></i>
+                                    </div>
+                                </div>
+                                <div class="post_body ms-4">
+                                    <div><?php echo $row['content_status'];?></div>
+                                </div>
+                                <div class="post_footer">
+                                    <ul class="nav nav-pills nav-fill mt-3 me-5">
+                                        <li class="nav-item">
+                                          <a class="fs-5" href=""><i class="bi bi-chat"></i></a>
+                                        </li>
+                                        <li class="nav-item ">
+                                          <a class="fs-5" href="#"><i class="bi bi-arrow-left-right"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class=" fs-5" href="#"><i class="bi bi-heart"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class=" fs-5"><i class="bi bi-share"></i></a>
+                                        </li>
+                                      </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <?php
+                            }
+                        }
+                ?>
+                <!-- post-tweet-follow -->
+                <section class="post-tweet">
+                    <div class="card mb-3 post border-0" style="max-width: 700px;">
+                        <div class="row g-0">
+                            <a class="col-md-2" href="profile-follow.php">
+                                <img src="./img/no-image.png" alt="" class="rounded-circle ms-5" width="35" height="35">
+                            </a>
+                            <div class="col-md-9 ">
+                                <div class="post_header container-fluid row">
+                                    <div class="col-md-10 post_header_left">
+                                        <a class="Name " href="profile-follow.php"><strong>tennguoidung</strong></a>
+                                        <span>@tendangnhap</span>
+                                        <span class ="date">ngày</span>
                                     </div>
                                     <div class="col-md-2 post_header_right">
                                         <i class="bi bi-three-dots "></i>
