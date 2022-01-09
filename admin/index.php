@@ -99,30 +99,28 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>bibi@gmail.com</td>
-                <td>12345</td>
-                <td>hello</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>tutu@gmail.com</td>
-                <td>34626</td>
-                <td>hihi</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>bibi</td>
-                <td>@twitter</td>
-                <td>lala@gmail.com</td>
-                <td>abcdgs</td>
-                <td>huhu</td>
-              </tr>
+            <?php
+                 $conn = mysqli_connect('localhost','root','','twitter');
+                 if(!$conn){
+                   die("kết nối thất bại");
+                 }
+                 $sql = "SELECT * FROM db_nguoidung";
+                 $result = mysqli_query($conn,$sql);
+                 if(mysqli_num_rows($result) > 0){
+                   while($row = mysqli_fetch_assoc($result)){
+                     ?>
+                        <tr> 
+                          <th scope="row"><?php echo $row['ma_nguoidung'];?></th>
+                          <td><?php echo $row['tendangnhap'];?></td>
+                          <td><?php echo $row['email'];?></td>
+                          <td><?php echo $row['tennguoidung'];?> </td>
+                          <td> <?php echo $row['status'];?></td>
+                          <td><a href="deleteNd.php?id=<?php echo $row['ma_nguoidung'];?>"><i class="bi bi-trash-fill"></i></td>
+                        <tr>
+                       <?php     
+                   }
+                 }
+            ?>
             </tbody>
           </table>
         </div>
