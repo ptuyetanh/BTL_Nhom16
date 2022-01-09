@@ -1,0 +1,101 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(250, 243, 243);
+    height: 100vh;
+  }
+  /*admin-login */
+  .form-loginadmin .bi-twitter{
+      font-size: 50px;
+      color: rgb(29, 155, 240);
+      margin-left:120px;
+    }
+    .form-loginadmin{
+      width: 100%;
+      max-width: 330px;
+      padding: 15px;
+      margin:auto;
+      margin-top:110px;
+    }
+    
+    .form-loginadmin .checkbox{
+      font-weight: 400;
+    }
+    
+    .form-loginadmin .form-floating:focus-within {
+      z-index: 2;
+    }
+    
+    .form-loginadmin input[type="tên đăng nhập"] {
+      margin-bottom: -1px;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    
+    .form-loginadmin input[type="mật khẩu"] {
+      margin-bottom: 10px;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+    .form-loginadmin.btn{
+        border-radius: 30px;
+    }
+    .form-loginadmin.footer-copy{
+      margin-left: 120px;
+    }
+    .input-group-text {
+    border-radius: 100px;
+    }
+    /*index*/
+  
+    .bi-twitter{
+      color: rgb(29, 155, 240);
+      font-size: 40px;
+    }
+    .col-md-12 {
+      padding: 0; 
+    }
+    .col-md-3{
+      height: 100%;
+      width: 230px;
+      background-color: black;
+      color: blue;
+      position: fixed;
+    }
+    .bi-envelope-fill{
+      font-size: 25px;
+      margin-left: 50px;
+    }
+    .bi-bell-fill{
+      font-size: 25px;
+      margin-left: 50px;
+    }
+    .bi-gear-fill{
+      font-size: 25px;
+      margin-left: 50px;
+    }
+    .bi-file-earmark-text-fill{
+      margin-right: 20px;
+    }
+    .bi-sliders{
+      margin-right: 20px;
+    }
+    .bi-person-circle{
+      margin-right: 20px;
+    }
+    .bi-info-circle{
+      margin-right: 20px;
+    }
+  .table{
+    margin-left: 100px;
+  }
+    .nav-link{
+      font-size: 15px;
+    }
+    .nav-link:hover{
+      color: white;
+    }
+   .col-md-9{
+     height: 100%;
+     margin-left: 230px;
+   }
