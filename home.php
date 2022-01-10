@@ -9,7 +9,7 @@
                 <!-- header-home  -->
                 <nav class="navbar navbar-light header-home ">
                     <div class="container">
-                        <strong class="fs-4 ms-4">Trang chủ</strong>
+                        <strong class="fs-4">Trang chủ</strong>
                     </div>
                </nav>
                 <!-- tweet-status  -->
@@ -74,11 +74,15 @@
                         if(!$conn){
                             die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
                         }
+
                         //truy vấn cơ sở dữ liệu
-                        $sql = "SELECT * FROM db_nguoidung INNER JOIN tweet WHERE db_nguoidung.ma_nguoidung = $ma_nguoidung";
+                        $sql = "SELECT * FROM db_nguoidung INNER JOIN tweet WHERE db_nguoidung.ma_nguoidung = $ma_nguoidung ORDER BY postedOn DESC ";
                         $result =mysqli_query($conn,$sql);
                         if(mysqli_num_rows($result)){
                             while($row =mysqli_fetch_assoc($result)){
+                                include_once("user.php");
+                                $time = $row['postedOn'];
+                                $time_ago =strtotime($time);
                 ?>
                 <section class="post-tweet">
                     <div class="card mb-3 post border-0" style="max-width: 700px;">
@@ -91,10 +95,18 @@
                                     <div class="col-md-10 post_header_left">
                                         <a class="Name " href="profile.php"><strong><?php echo $row['tennguoidung'];?></strong></a>
                                         <span>@<?php echo $row['tendangnhap'];?></span>
-                                        <span class ="date"><?php echo $row['postedOn'];?></span>
+                                        <span class ="date"><?php echo time_stamp($time_ago);?></span>
                                     </div>
                                     <div class="col-md-2 post_header_right">
-                                        <i class="bi bi-three-dots "></i>
+                                        <div class="dropdown">
+                                            <a  type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                               <i class="bi bi-three-dots "></i>
+                                            </a>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <li><a class="dropdown-item" href="#">Xóa bài viết </a></li>
+                                                <li><a class="dropdown-item" href="#">Sửa bài viết</a></li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="post_body ms-4">
@@ -139,7 +151,16 @@
                                         <span class ="date">ngày</span>
                                     </div>
                                     <div class="col-md-2 post_header_right">
-                                        <i class="bi bi-three-dots "></i>
+                                    <div class="dropdown">
+                                            <a  type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                                               <i class="bi bi-three-dots "></i>
+                                            </a>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                                <li><a class="dropdown-item" href="#">Xóa bài viết </a></li>
+                                                <li><a class="dropdown-item" href="#">Sửa bài viết</a></li>
+                                                <li><a class="dropdown-item" href="#"></a>Báo cáo vi phạm</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="post_body ms-4">

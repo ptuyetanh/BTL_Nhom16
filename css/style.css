@@ -163,8 +163,7 @@ footer .footer2{
   font-size: 24px;
 }
 .sidebar ul .dropup{
- position: fixed;
- bottom: 0;
+   margin-top: 100px;
 }
 .sidebar ul .dropup .dropdown-menu{
   border-radius:15px; 
