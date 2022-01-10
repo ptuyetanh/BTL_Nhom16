@@ -726,6 +726,7 @@ margin-right: 7%;
 border-radius: 100px;
 }
 /*reply-wrapper*/
+/*reply-wrapper*/
 .reply-wrapper{
   width: 100vw;
   height: 100%;
@@ -736,7 +737,7 @@ border-radius: 100px;
   top: 0;
   bottom: 0;
   background: rgba(0,0,0,0);
-  background:  rgba(0,0,0,0,4);
+  background:  rgba(0,0,0,0.1);
   
 }
 .reply-wrapper .reply-modal-content{
@@ -746,31 +747,88 @@ border-radius: 100px;
   transform: translate(-50%,-50%);
   background-color: #fff;
   width: 600px;
-  height: 289px;
-  border-top-left-radius: 4rem;
-  border-top-right-radius: 4rem;
-  box-shadow: rgba(101,119,134,0,2) 0px 0px 15px , rgba(101,119,134,0.15) 0px 0px 3px 1px ;
+  height: 450px;
+  border-radius: 1.5rem;
+  box-shadow: rgba(101,119,134,0.2) 0px 0px 15px , rgba(101,119,134,0.15) 0px 0px 3px 1px ;
 }
-.reply .modal-header{
+.reply-modal-header{
   height: 53px;
   padding: 0 var(--spacing);
-  display: center;
-  border-bottom: 0.1rem solid rgb(196,207,214);
+  display: flex;
+  align-items: center;
 }
 .reply-modal-header .close{
   font-size: 1.5rem;
   font-weight: 700;
   cursor: pointer;
   line-height: 1rem;
-  margin-left: 1rem;
+  margin-left: 3rem;
 }
-.reply-modal-header .close svg.close-icon{
-  fill: var(--blue);
-  width: 2.5rem;
-  height: 2.5rem;
+.reply-modal-header .biReply:hover{
+  background-color: rgb(224, 224, 224);
+  border-radius: 80%;
 
 }
-.reply-modal-header .close svg:hover{
-  background-color: var(--blue-50-a1);
-  border-radius: var(--corner-radius-full);
+.reply-modal-body{
+  position: relative;
+  overflow: auto;
+  margin-left: 3.3%;
+}
+.reply-container{
+  margin: 2rem;
+  display: flex;
+}
+
+.reply-wrapper-image{
+  width: 4.9rem;
+  height: 4.9rem;
+  margin-right: 1rem;
+  box-shadow: rgba(0,0,0,0.02) 0px 0px 2px inset;
+}
+.reply-wrapper-image img{
+  height: 70%;
+  width: 70%;
+  object-fit: cover;
+  border-radius: var(--coner-radius-full);
+
+}
+.reply-content-wrapper{
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+}
+.reply-container-desc{
+  display: flex;
+  align-items: center;
+}
+.reply-user-fullName{
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-right: 0.5rem;
+
+}
+.reply-username{
+  font-size: 1.4rem;
+  font-weight: 400;
+  padding: 0.3rem;
+}
+.reply-date{
+font-size: 1.6rem;
+}
+span .reply-date-time{
+font-weight: 800;
+} 
+.reply-desc-text{
+font-size: 1.5rem;
+line-height: 1.3125;
+font-weight: 400;
+margin-bottom: 0.8rem;
+
+}
+span.reply-to{
+  font-size: 1.2rem;
+  font-weight: 400;
+  padding-right: 0.5rem;
+  cursor: pointer;
+
 }

@@ -128,6 +128,68 @@
                                         </li>
                                       </ul>
                                 </div>
+
+                                <!-- Làm thì comment phần này nhá  -->
+
+
+                                <div class="reply-wrapper">
+                                    <div class="reply-modal-content">
+                                        <div class="reply-modal-header">
+                                        <span class="close" aria-label="Close" data-focusable = "true" role = "button" tabindex = "0">  </span>
+                                            <i class="biReply bi-x-lg fs-5"></i>
+                                        </div>
+                                        <div class="reply-modal-body">
+                                            <div class="reply-container">
+                                                <div class="reply-wrapper-image">
+                                                <a class="" href="profile-follow.php">
+                                                    <img src="./img/no-image.png" alt="" class="rounded-circle " width="40" height="40">
+                                                </a>
+                                                </div>
+                                                <div class="reply-container-wrapper">
+                                                    <div class="reply-container-desc">
+                                                        <div class="reply-user-fullName">
+                                                            Daniel Brown
+                                                        </div>
+                                                        <div class="reply-username">
+                                                            @brown
+                                                        </div>
+                                                        <div class="reply-date">
+                                                         <span  class="reply-date-time">.</span>1h
+                                                        </div>
+                                                    </div>
+                                                    <div class="reply-desc-text">
+                                                        hello
+                                                    </div>
+                                                    <div class="reply-to-desc">
+                                                        <span class="reply-to">
+                                                            Reply to
+                                                        </span>
+                                                        <a href="#" class="reply-username-link-link">@brown</a>
+                                                    </div>
+                                                    
+
+                                                </div>
+                                            </div>
+                                            <div class="reply-pip"></div>
+                                            <div class="reply-user-msg">
+                                                <div class="reply-wrapper-image">
+                                                <a class="" href="profile-follow.php">
+                                                    <img src="./img/no-image.png" alt="" class="rounded-circle " width="40" height="40">
+                                                </a>
+                                                </div>
+                                                <textarea  id="replyInput" placeholder = "Tweet câu trả lời của bạn"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="rely-model-footer">
+                                            <button class= "reply-btn" id = "replyBtn" role= "button" data-focusable = "true" tabindex ="0" disabled = "true" > 
+                                                Reply
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    
+ 
+                                </div>
                             </div>
                         </div>
                     </div>
