@@ -1,3 +1,9 @@
+<?php
+session_start();
+ if(!isset($_SESSION['admin'])){
+  header("location:Login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,17 +80,31 @@
                     Quản lý người dùng</a>
                 </li>
                 <hr>
-                <li class="nav-item fs-5 p-0,5 mb-2">
-                  <a class="nav-link " href=""><i class="bi bi-person-circle"></i>
-                    Admin</a>
-                </li>
-                <hr>
                 <li class="nav-item fs-5  p-0,5 mb-2">
                   <a class="nav-link " href=""><i class="bi bi-info-circle"></i>
                     Hỗ trợ</a>
                 </li>
                 <hr>
+                <li class="nav-link dropup p-2 fs-4" style="margin-top:350px">
+                  <a href="#"
+                      class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
+                      id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="text-primary"><i class="bi bi-person-circle"></i>Admin</span><br>
+                  </a>
+                  <ul class="dropdown-menu text-small shadow " aria-labelledby="dropdownUser2">
+                      <li><a class="dropdown-item" href="#">
+                              <span><i class="bi bi-person-circle"></i>Admin</span><br>
+                          </a>
+                      </li>
+                      <li><a class="dropdown-item" href="#">Cài Đặt</a></li>
+                      <li>
+                          <hr class="dropdown-divider">
+                      </li>
+                      <li><a class="dropdown-item" href="logout.php">Đăng xuất</a></li>
+                  </ul>
+                </li>
             </div>
+          </nav>
         </div>
         <div class="col-md-9 main">
           <table class="table">
