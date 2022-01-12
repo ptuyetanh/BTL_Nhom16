@@ -119,12 +119,79 @@
                                 </div>
                                 <div class="post_footer">
                                     <ul class="nav nav-pills nav-fill mt-3 me-5">
-                                        <li class="nav-item">
-                                          <a class="fs-5" href=""><i class="bi bi-chat"></i></a>
+                                    <li class="nav-item">
+                                          <a class="fs-5" href="" data-bs-toggle="modal"
+                                    data-bs-target="#modelCOMMENT"><i class="bi bi-chat"></i></a>
                                         </li>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="modelCOMMENT" data-bs-backdrop="static"
+                                            data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                            aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body row">
+                                                    <div class="reply-container">
+                                                <div class="reply-wrapper-image">
+                                                <a class="" href="profile-follow.php">
+                                                    <img src="./img/no-image.png" alt="" class="rounded-circle " width="40" height="40">
+                                                </a>
+                                                </div>
+                                                <div class="reply-container-wrapper">
+                                                    <div class="reply-container-desc">
+                                                        <div class="reply-user-fullName">
+                                                            Daniel Brown
+                                                        </div>
+                                                        <div class="reply-username">
+                                                            @brown
+                                                        </div>
+                                                        <div class="reply-date">
+                                                         <span  class="reply-date-time">.</span>1h
+                                                        </div>
+                                                    </div>
+                                                    <div class="reply-desc-text">
+                                                        hello
+                                                    </div>
+                                                    <div class="reply-to-desc">
+                                                        <span class="reply-to">
+                                                            Reply to
+                                                        </span>
+                                                        <a href="" class="reply-username-link" >@brown</a>
+                                                        
+                                                    </div>
+                                                    
+
+                                                </div>
+                                            </div>
+                                            <div class="vetical-pip"></div>
+                                            <div class="reply-user-msg">
+                                                <div class="reply-wrapper-image">
+                                                <a class="" href="profile-follow.php">
+                                                    <img src="./img/no-image.png" alt="" class="rounded-circle " width="40" height="40">
+                                                </a>
+                                                </div>
+                                                
+                                                    </div>
+                                                    
+                                                    <div class="model-footer " id = "error_status">
+                                                    <textarea  class = "replytxt"id="replyInput" placeholder = "Tweet câu trả lời của bạn"></textarea>
+                                            </div>
+                                                    <button class= "reply-btn" id = "replyBtn" role= "button" > 
+                                                Reply
+                                            </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                       
                                         <li class="nav-item ">
                                           <a class="fs-5" href="#"><i class="bi bi-arrow-left-right"></i></a>
                                         </li>
+                                        
                                         <li class="nav-item">
                                           <a class=" fs-5" href="#"><i class="bi bi-heart"></i></a>
                                         </li>
@@ -132,12 +199,21 @@
                                           <a class=" fs-5"><i class="bi bi-share"></i></a>
                                         </li>
                                       </ul>
+                                      
+
+
                                 </div>
 
-                                <!-- Làm thì comment phần này nhá  -->
+                                
+                                <div class="comment-container">
+                                                
+                                                    </div>
+                                
+
+                                <!-- Làm thì comment phần này nhá 
 
 
-                                <!-- <div class="reply-wrapper">
+                                <div class="reply-wrapper">
                                     <div class="reply-modal-content">
                                         <div class="reply-modal-header">
                                         <span class="close" aria-label="Close" data-focusable = "true" role = "button" tabindex = "0">  </span>
@@ -169,13 +245,13 @@
                                                         <span class="reply-to">
                                                             Reply to
                                                         </span>
-                                                        <a href="#" class="reply-username-link-link">@brown</a>
+                                                        <a href="#" class="reply-username-link">@brown</a>
                                                     </div>
                                                     
 
                                                 </div>
                                             </div>
-                                            <div class="reply-pip"></div>
+                                            <div class="vetical-pip"></div>
                                             <div class="reply-user-msg">
                                                 <div class="reply-wrapper-image">
                                                 <a class="" href="profile-follow.php">
@@ -185,7 +261,7 @@
                                                 <textarea  id="replyInput" placeholder = "Tweet câu trả lời của bạn"></textarea>
                                             </div>
                                         </div>
-                                        <div class="rely-model-footer">
+                                        <div class="reply-modal-footer">
                                             <button class= "reply-btn" id = "replyBtn" role= "button" data-focusable = "true" tabindex ="0" disabled = "true" > 
                                                 Reply
                                             </button>
@@ -194,9 +270,10 @@
                                     
                                     
  
-                                </div> -->
+                                </div>
+                                 -->
 
-                                <!-- đến đây  -->
+                                đến đây  -->
                             </div>
                         </div>
                     </div>
