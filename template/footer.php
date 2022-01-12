@@ -1,4 +1,4 @@
-<div class="col-md-3 search w-5 h-5">
+<div class="col-md-3 search w-5 h-5 ">
     <nav class="navbar navbar-light nav-pills nav-fill search_tweet">
         <div class="container">
             <!-- search  -->

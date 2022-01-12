@@ -20,7 +20,7 @@
         $stmt = mysqli_prepare($conn,$sql);
         mysqli_stmt_bind_param($stmt,"s",$email);
         if(mysqli_stmt_execute($stmt)){
-            mysqli_stmt_bind_result($stmt,$ma_nguoidung,$tendangnhap,$email,$matkhau,$tennguoidung,$status,$email_verification_link,$email_verified_at,$pofileImage,$pofileCover,$following,$followers);
+            mysqli_stmt_bind_result($stmt,$ma_nguoidung,$tendangnhap,$email,$matkhau,$tennguoidung,$status,$email_verification_link,$email_verified_at,$pofileImage,$pofileCover,$following,$followers,$Dateofbirth,$story);
             if(mysqli_stmt_fetch($stmt)){
                 // echo $pass;
                 // echo $matkhau;

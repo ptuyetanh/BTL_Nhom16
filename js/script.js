@@ -41,16 +41,6 @@ $(document).ready(function(){
          }
      })
    })
-//xử lý sìdebar
-$(function(){
-//alert ("jwhsdeiuwq");
- let path=window.location.href;
- $('#sidebarMenu ul li a').each(function(){
-     if(this.href==path){
-        $(this).addClass('active')
-     }
- })
-})
 //xử lý nút post(chạy không vào)
 let textarea = document.querySelector("#content_status");
 let inputButton = document.querySelector("#submit-tweet-button");
