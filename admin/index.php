@@ -20,11 +20,14 @@ session_start();
 
 <body>
   <div class="container-fluid">
-    <div class="col-md-12 header">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container-fluid">
-          <i class="bi bi-twitter"></i>
-          <a class="navbar-brand text-primary" href="#">Twitter Admin</a>
+        <a class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu"
+              aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="bi bi-twitter text-primary p-2"></i>
+            </a>
+
+          <a class="navbar-brand text-primary" href="#"> <i class="bi bi-twitter text-primary p-2"></i>Twitter Admin</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="Toggle navigation">
@@ -58,33 +61,28 @@ session_start();
           </div>
         </div>
       </nav>
-
-      <div class="row">
-        <div class="col-md-3 sidebar">
-
+     <div class="container-fluid">
+       <div class="row">
+        <div class="col-md-3 sidebar bg-dark">
           <nav class="navbar navbar-expand-md ">
-            <a class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu"
-              aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-              <i class="bi bi-twitter text-primary p-2"></i>
-            </a>
             <div class="collapse navbar-collapse" id="sidebarMenu">
-              <ul class="navbar-nav flex-column ">
-                <li class="nav-item fs-5  p-0,5 mb-2">
-                  <a class="nav-link " href=""><i class="bi bi-file-earmark-text-fill"></i>
-                    Quản lý bài viết
+              <ul class="navbar-nav flex-column mt-5">
+              <li class="nav-item fs-5  p-0,5 mb-2 mt-5">
+                  <a class="nav-link " href=""><i class="bi bi-sliders"></i>
+                    Quản lý người dùng
                   </a>
                 </li>
                 <hr>
                 <li class="nav-item fs-5 p-0,5 mb-2">
-                  <a class="nav-link " href=""><i class="bi bi-sliders"></i>
-                    Quản lý người dùng</a>
+                  <a class="nav-link " href="qlbv.php"><i class="bi bi-file-earmark-text-fill"></i>
+                  Quản lý bài viết</a>
+                  
                 </li>
                 <hr>
                 <li class="nav-item fs-5  p-0,5 mb-2">
                   <a class="nav-link " href=""><i class="bi bi-info-circle"></i>
                     Hỗ trợ</a>
                 </li>
-                <hr>
                 <li class="nav-link dropup p-2 fs-4" style="margin-top:350px">
                   <a href="#"
                       class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
@@ -103,19 +101,19 @@ session_start();
                       <li><a class="dropdown-item" href="logout.php">Đăng xuất</a></li>
                   </ul>
                 </li>
+                <hr>
             </div>
-          </nav>
         </div>
-        <div class="col-md-9 main">
-          <table class="table">
+        <div class="col-md-9 main mt-5">
+          <table class="table mt-5">
             <thead>
               <tr>
                 <th scope="col">Mã người dùng</th>
-                <th scope="col">Tên người dùng</th>
                 <th scope="col">Tên đăng nhập</th>
                 <th scope="col">Email</th>
-                <th scope="col">Mật khẩu</th>
+                <th scope="col">Tên người dùng</th>
                 <th scope="col">Status</th>
+                <th scope="col">Xóa</th>
               </tr>
             </thead>
             <tbody>
@@ -134,7 +132,7 @@ session_start();
                           <td><?php echo $row['tendangnhap'];?></td>
                           <td><?php echo $row['email'];?></td>
                           <td><?php echo $row['tennguoidung'];?> </td>
-                          <td> <?php echo $row['status'];?></td>
+                          <td><?php echo $row['status'];?></td>
                           <td><a href="deleteNd.php?id=<?php echo $row['ma_nguoidung'];?>"><i class="bi bi-trash-fill"></i></td>
                         <tr>
                        <?php     
@@ -144,7 +142,9 @@ session_start();
             </tbody>
           </table>
         </div>
-      </div>
+      
+     </div>
+      
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

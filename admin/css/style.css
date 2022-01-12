@@ -58,7 +58,7 @@ html,body{
     .col-md-3{
       height: 100%;
       width: 230px;
-      background-color: black;
+    
       color: blue;
       position: fixed;
     }
