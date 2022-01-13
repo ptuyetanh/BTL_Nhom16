@@ -7,18 +7,20 @@
     if(!$conn){
         die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
     }
-
     //truy vấn cơ sở dữ liệu
-    $sql = "SELECT * FROM db_nguoidung WHERE ma_nguoidung = $ma_nguoidung";
+    $sql = "SELECT * FROM db_nguoidung WHERE ma_nguoidung=$ma_nguoidung";
     $result =mysqli_query($conn,$sql);
     if(mysqli_num_rows($result)){
         while($row =mysqli_fetch_assoc($result)){
+            $ma_nguoidung = $row['ma_nguoidung'];
 ?>
             <!--main-->
             <div class="col-md-6 mainprofile border-start border-end ">
                 <div class="main-header_text">
                     <div class="arrow">
-                        <i class="bi bi-arrow-left"></i>
+                        <a href="home.php">
+                            <i class="bi bi-arrow-left fs-3 text-dark "></i>
+                        </a>
                     </div>
                     <div class="around">
                         <strong><?php echo $row['tennguoidung'];?></strong><br>
@@ -43,58 +45,55 @@
                         </div>
                     </div>
                     <!-- modal -->
-                    <div class="modal fade" id="model-message" data-bs-backdrop="static" data-bs-keyboard="false"
-                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <form class="modal fade" id="model-message" data-bs-backdrop="static" data-bs-keyboard="false"
+                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" action="process-profile.php" method="post" enctype="multipart/form-data" >
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content ">
                                 <div class="modal-header">
                                     <h5 class="modal-title fs-2" id="exampleModalToggleLabel"><button type="button"
                                             class="btn-close fs-4" data-bs-dismiss="modal"
                                             aria-label="Close"></button>Chỉnh sửa hồ sơ</h5>
-                                    <a class="btn btn-dark  text-light me-3 pe-4 ps-4" href="#" role="button"
-                                        data-bs-toggle="modal" data-bs-target="#model-message" data-focusable="true">
-                                        <span class="text-light fs-5">Lưu</span>
-                                    </a>
+                                    <input type="submit" name="submit" value="Lưu" class="submit_upload bg-dark text-light fs-4 pe-4 ps-4 rounded-pill">
                                 </div>
                                 <div class="modal-body-profile">
                                     <div class="modal_coverimage">
                                         <img id="background" class="img-fluid" src="img/images5.jpg" alt="">
                                         <div class="file_camera">
-                                            <label for="filephoto">
+                                            <label for="filephoto1">
                                                 <i class="bi bi-camera fs-1 pe-3 ps-3 text-light"></i>
+                                                <input type="file" name="myFile" id="filephoto1">
                                             </label>
-                                            <input type="file" name="file" id="filephoto">
                                         </div>
                                     </div>
                                     <div class="modal_Avatar">
                                         <img src="img/no-image1.jpg" class="rounded-circle" alt="">
                                         <div class="file_camera">
-                                            <label for="filephoto">
+                                            <label for="filephoto2">
                                                 <i class="bi bi-camera fs-2 pe-2 ps-2 text-light"></i>
                                             </label>
-                                            <input type="file" name="file" id="filephoto">
+                                            <input type="file" name="myFile" id="filephoto2">
                                         </div>
                                     </div>
-                                    <form class="profile-input">
+                                    <div class="profile-input">
                                         <div class="form-floating mb-4">
-                                            <input type="text" id="inputEmail" name="" class="form-control"
-                                                id="floatingInput">
+                                            <input type="text" id="inputEmail" name="tennguoidung" class="form-control"
+                                                id="floatingInput" value="<?php $row['tennguoidung']?>">
                                             <label for="floatingInput">Tên</label>
                                         </div>
                                         <div class="form-floating mb-1">
-                                            <input type="text" id="inputEmail" name="" class="form-control"
-                                                id="floatingInput">
+                                            <input type="text" id="inputEmail" name="story" class="form-control"
+                                                id="floatingInput" value="<?php $row['story']?>">
                                             <label for="floatingInput">Tiểu sử</label>
                                         </div>
                                         <div class="form-floating mb-5 row">
                                             <label for="birthday" class="mb-5 text-secondary">Ngày sinh</label><br>
-                                            <input type="date" id="birthday" name="birthday" class="col-md-6 mt-5 ms-3">
+                                            <input type="date" id="birthday" name="Dateofbirth" class="col-md-6 mt-5 ms-3" value="<?php $row['Dateofbirth']?>">
                                         </div>
-                                    </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
                 <div class="profile-user mt-3">
                     <strong class="fs-4"><?php echo $row['tennguoidung'];?></strong><br>
