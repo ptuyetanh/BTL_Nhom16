@@ -35,22 +35,33 @@
             </li>
         </ul>
     </div>
+    
     <div class="follow-suggestion mt-4">
         <nav class="navbar navbar-light header-home bg-light">
             <div class="container">
                 <strong>Gợi ý theo dõi</strong>
             </div>
         </nav>
+        <?php
+                 $conn = mysqli_connect('localhost','root','','twitter');
+                 if(!$conn){
+                   die("kết nối thất bại");
+                 }
+                 $sql = "SELECT * FROM db_nguoidung";
+                 $result = mysqli_query($conn,$sql);
+                 if(mysqli_num_rows($result) > 0){
+                   while($row = mysqli_fetch_assoc($result)){
+        ?>
         <ul class="nav nav-pills nav-fill follow bg-light">
             <li class="nav-item ">
-                <a class="nav-link text-dark" href="#">
+                <a class="nav-link text-dark" href="profile-follow.php">
                     <div class="container-fluid row">
                         <div class="col-md-4">
                             <img src="./img/no-image.png" alt="" class="rounded-circle" width="40" height="40">
                         </div>
                         <div class="col-md-6">
-                            <strong>tên người dùng</strong><br>
-                            <span>@tên đăng nhập</span>
+                            <strong><?php echo $row['tennguoidung'];?></strong><br>
+                            <span>@<?php echo $row['tendangnhap'];?></span>
                         </div>
                         <div class="col-md-2">
                             <input class="bg-dark text-light" type="submit" id="submit-follow" value="Follow"
@@ -60,7 +71,13 @@
                 </a>
             </li>
         </ul>
+        <?php
+                   }
+                }
+?>
     </div>
+
+
     <footer class="containner footer-right">
         <div class="footer-right">
             <a class="nav-link text-muted " href="#">Giới Thiệu</a>
@@ -91,7 +108,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
-<script src="js/reply.js"></script>
+ <script src="./js/user.js"></script>   
 </body>
 
 </html>
