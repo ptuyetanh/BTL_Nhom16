@@ -5,37 +5,146 @@
 <!-- main  -->
 <main class="col-md-6 main border-start border-end">
     <!-- header-home  -->
-    <nav class="navbar navbar-light header-home ">
-        <div class="container">
-            <strong class="fs-4">Trang chủ</strong>
-        </div>
-    </nav>
-    <!-- tweet-status  -->
-    <div class="tweet-status">
-        <!-- status  -->
-        <div class="card mb-3 status border-0" style="max-width: 700px;">
-            <div class="row">
-                <div class="col-md-2">
-                <?php
-                    $conn = mysqli_connect('localhost','root','','twitter');
-                    if(!$conn){
-                        die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
-                    }
-                    //truy vấn cơ sở dữ liệu
-                    $sql = "SELECT * FROM db_nguoidung WHERE ma_nguoidung = $ma_nguoidung";
-                    $result =mysqli_query($conn,$sql);
-                    if(mysqli_num_rows($result)){
-                        while($row =mysqli_fetch_assoc($result)){
-                            $imageURL = 'uploads/'.$row["pofileImage"];
-                        echo '<img src="'.$imageURL.'" class="rounded-circle img-fluid ms-5"  width="35" height="35">';
-                    }
-                    }else{
-                        echo '<img src="img/no-image1.jpg" alt="">';
-                } ?>
+
+    <div class="container-fluid">
+    <a href="home.php" class="btnbl"><i class="bi bi-arrow-left fs-5"></i></a>
+          
+
+          <div class="row listUser ">
+            <strong>Tweet</strong><br>
+            
+          </div>
+          <div class="navbar-nav ms-auto mb-2 mb-lg-0">
+      
+      
+           
+            </button>
+
+
+          </div>
+          <div>
+
+           
+
+          </div>
+    
+    <!-- post-tweet  -->
+    <?php
+
+
+    
+                        $conn = mysqli_connect('localhost','root','','twitter');
+                        if(!$conn){
+                            die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
+                        }
+
+                        //truy vấn cơ sở dữ liệu
+                        $result =mysqli_query($conn,"SELECT * FROM tweet INNER JOIN db_nguoidung on db_nguoidung.ma_nguoidung=tweet.ma_nguoidung  WHERE db_nguoidung.ma_nguoidung = $ma_nguoidung AND tweetID =".$_GET['id'] );
+                        $product = mysqli_fetch_assoc($result);
+                        
+                ?>
+    <section class="post-tweet">
+        <div class="card mb-3 post border-0" style="max-width: 700px;">
+            <div class="row g-0">
+            <a class="col-md-2" href="profile.php">
+                   <?php  $imageURL = 'uploads/'.$product["pofileImage"];
+                   echo '<img src="'.$imageURL.'" alt="" class="rounded-circle ms-5" width="35" height="35">';?>
+                </a>
+                <div class="col-md-9 ">
+                    <div class="post_header container-fluid row">
+                        <div class="col-md-10 post_header_left">
+                            <a class="Name " href="profile.php"><strong>
+                                    <?php echo $product['tennguoidung'];?>
+                                </strong></a>
+                            <span>@
+                                <?php echo $product['tendangnhap'];?>
+                            </span>
+                            <span class="date">
+                                <?php echo $product['postedOn'];?>
+                            </span>
+                        </div>
+                        <div class="col-md-2 post_header_right">
+                            <div class="dropdown">
+                                <a type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <i class="bi bi-three-dots "></i>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                            data-bs-target="#deleteTwweetModal">Xóa bài viết </a></li>
+                                    <li><a class="dropdown-item" href="#">Ghim vào hồ sơ của bạn</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- modal xóa tweet -->
+                        <div class="modal fade mt-5" id="deleteTwweetModal" tabindex="-1"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Xóa tweet</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Điều này không thể hoàn tác và nó sẽ bị xóa khỏi hồ sơ của bạn, dòng thời
+                                            gian của bất kỳ tài khoản nào theo dõi bạn và kết quả tìm kiếm Twitter.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary pe-5 ps-5"
+                                            data-bs-dismiss="modal">Hủy</button>
+                                        <button type="button" class="btn btn-primary pe-5 ps-5">Xóa</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post_body ms-4">
+                        <div>
+                            <?php echo $product['content_status'];?>
+                        </div>
+                    </div>
+                    <div class="post_footer">
+                        <ul class="nav nav-pills nav-fill mt-3 me-5">
+                            <li class="nav-item">
+                                <a class="fs-5" href=""><i
+                                        class="bi bi-chat"></i></a>
+                            </li>
+                            <!-- Modal -->
+                            
+
+
+                            <li class="nav-item ">
+                                <a class="fs-5" href="#"><i class="bi bi-arrow-left-right"></i></a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class=" fs-5" href="#"><i class="bi bi-heart"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class=" fs-5"><i class="bi bi-share"></i></a>
+                            </li>
+                        </ul>
+
+
+
+                    </div>
+                    
+
+
+                    
+
                 </div>
-                <div class="col-md-10">
-                    <form action="process-tweet.php" method="post" enctype="multipart/form-data">
-                        <textarea name="content_status" placeholder="Bạn đang nghĩ gì?" aria-label="Bạn đang nghĩ gì"
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <div class="col-md-10">
+                    <form action="them_bl.php?id=<?php echo $product['tweetID'];?>" method="post" enctype="multipart/form-data">
+                        <textarea name="comment" placeholder="Bạn đang nghĩ gì?" aria-label="Bạn đang nghĩ gì"
                             id="content_status" autofocus></textarea>
                         <div id="tweet_post">
                             <div class="container-fluid row">
@@ -64,47 +173,45 @@
                                     <input type="file" name="myFile" id="fileimage"
                                         style="position: absolute;width:0;height:0;right:0;left:108px;opacity: 0;">
                                     <input class="bg-primary" type="submit" id="submit-tweet-button" value="Tweet"
-                                        role="button">
+                                        role="button" >
                                 </div>
                             </div>
                         </div>
                     </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <hr>
-    <!-- post-tweet  -->
-    <?php
-        $conn = mysqli_connect('localhost','root','','twitter');
-        if(!$conn){
-            die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
-        }
+                    </div>
 
-        //truy vấn cơ sở dữ liệu
-        $sql = "SELECT * FROM db_nguoidung INNER JOIN tweet on db_nguoidung.ma_nguoidung=tweet.ma_nguoidung  WHERE db_nguoidung.ma_nguoidung = $ma_nguoidung  ORDER BY postedOn DESC ";
-        $result =mysqli_query($conn,$sql);
-        if(mysqli_num_rows($result)){
-            while($row =mysqli_fetch_assoc($result)){
+
+
+    <?php 
+    $conn=mysqli_connect('localhost','root','','twitter');
+    if(!$conn){
+        die("kết nối thất bại");
+    }
+    $id= $_GET['id'];
+    $sql ="SELECT * FROM comment , tweet WHERE comment.tweetID = tweet.tweetID AND comment.tweetID = $id ORDER BY commentID DESC ";
+
+    $result = mysqli_query($conn,$sql);
+        while($row =mysqli_fetch_assoc($result)){
+  
     ?>
-    <section class="post-tweet">
+    
+   
+
+         <section class="post-tweet">
         <div class="card mb-3 post border-0" style="max-width: 700px;">
             <div class="row g-0">
-                <a class="col-md-2" href="profile.php">
-                   <?php  $imageURL = 'uploads/'.$row["pofileImage"];
-                   echo '<img src="'.$imageURL.'" alt="" class="rounded-circle ms-5" width="35" height="35">';?>
+            <a class="col-md-2" href="profile-follow.php">
+                    <img src="./img/no-image.png" alt="" class="rounded-circle ms-5" width="35" height="35">
                 </a>
                 <div class="col-md-9 ">
                     <div class="post_header container-fluid row">
                         <div class="col-md-10 post_header_left">
                             <a class="Name " href="profile.php"><strong>
-                                    <?php echo $row['tennguoidung'];?>
                                 </strong></a>
                             <span>@
-                                <?php echo $row['tendangnhap'];?>
                             </span>
                             <span class="date">
-                                <?php echo $row['postedOn'];?>
+                                <?php echo $row['commentAt'];?>
                             </span>
                         </div>
                         <div class="col-md-2 post_header_right">
@@ -124,8 +231,7 @@
                     </div>
                     <div class="post_body ms-4">
                         <div>
-                            <a href="chitiet.php?id=<?php echo $row['tweetID'];?>">
-                            <?php echo $row['content_status'];?>
+                            <?php echo $row['comment'];?>
                         </div>
                     </div>
                     <div class="post_footer">
@@ -214,6 +320,7 @@
 
 
                     </div>
+                    
 
 
                     <div class="comment-container">
@@ -224,97 +331,12 @@
             </div>
         </div>
     </section>
-
-    
-
-    <div class="modal fade mt-5" id="deleteTwweetModal" tabindex="-1"
-
-                            aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title">Xóa tweet</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-
-
-
-
-                                    <div class="modal-body">
-                                        <p>Điều này không thể hoàn tác và nó sẽ bị xóa khỏi hồ sơ của bạn, dòng thời
-                                            gian của bất kỳ tài khoản nào theo dõi bạn và kết quả tìm kiếm Twitter.</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary pe-5 ps-5"
-                                            data-bs-dismiss="modal">Hủy</button>                                     
-                                            <a class="btn btn-primary pe-5 ps-5" href="deletetweet.php?id=<?php echo $row['tweetID'];?>"> xoá</a>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
     <?php
-                            }
-                        }
-                ?>
-                                    
-
-                        <!-- modal xóa tweet -->
-                        
-                        
+        }
+        ?>
 
     <!-- post-tweet-follow -->
-    <section class="post-tweet">
-        <div class="card mb-3 post border-0" style="max-width: 700px;">
-            <div class="row g-0">
-                <a class="col-md-2" href="profile-follow.php">
-                    <img src="./img/no-image.png" alt="" class="rounded-circle ms-5" width="35" height="35">
-                </a>
-                <div class="col-md-9 ">
-                    <div class="post_header container-fluid row">
-                        <div class="col-md-10 post_header_left">
-                            <a class="Name " href="profile-follow.php"><strong>tennguoidung</strong></a>
-                            <span>@tendangnhap</span>
-                            <span class="date">ngày</span>
-                        </div>
-                        <div class="col-md-2 post_header_right">
-                            <div class="dropdown">
-                                <a type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    <i class="bi bi-three-dots "></i>
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                    <li><a class="dropdown-item" href="#">Xóa bài viết </a></li>
-                                    <li><a class="dropdown-item" href="#">Sửa bài viết</a></li>
-                                    <li><a class="dropdown-item" href="#"></a>Báo cáo vi phạm</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="post_body ms-4">
-                        <div> post text..... </div>
-                    </div>
-                    <div class="post_footer">
-                        <ul class="nav nav-pills nav-fill mt-3 me-5">
-                            <li class="nav-item">
-                                <a class="fs-5" href=""><i class="bi bi-chat"></i></a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="fs-5" href="#"><i class="bi bi-arrow-left-right"></i></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class=" fs-5" href="#"><i class="bi bi-heart"></i></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class=" fs-5"><i class="bi bi-share"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    
 </main>
 <?php
    include("template/footer.php")
