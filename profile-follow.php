@@ -1,4 +1,18 @@
 <?php
+include_once 'config/database.php';
+include_once 'user.php';
+$database = new Database();
+$db =$database->getConnection();
+
+$user = new User($db);
+
+if(!$user->loggedIn()){
+    header("location:login.php");
+}
+$loggedUser= $user->getUser();
+
+?>
+<?php
      include("template/sidebar.php");
      $page_tittle="Twitter/Theo dõi";
 ?>
@@ -30,8 +44,14 @@
                             <div class=" col-md-5 profile_btnfollow mt-5">
                                 <i class="bi bi-three-dots fs-4 me-3"></i>
                                 <i class="bi bi-bell fs-4"></i>
-                                <input class="bg-dark text-light ms-3 fs-4" type="submit" id="submit-follow" value="Theo dõi"
-                                            role="button" disabled="true">
+                                <?php
+                                  $unfollowedUserResult = $user->getFollower();
+                                  while ($unfollowedUser = $unfollowedUserResult->fetch_assoc()) { 
+                                ?>
+                                <button class= " bg-dark text-light ms-3 fs-4" type="button" id="follow <?php echo $unfollowedUser['ma_nguoidung']; ?>" data-ma_nguoidung="<?php echo $unfollowedUser['ma_nguoidung']; ?>" class="btn btn-primary pull-right follow" style="margin:5px 5px 0px 0px;">Follow</button>
+                                <!-- <input class="bg-dark text-light ms-3 fs-4" type="submit" id="submit-follow" value="Theo dõi"
+                                            role="button" disabled="true"> -->
+                                            <?php } ?>          
                             </div>
     
                         <div class="profile-user-follow mt-3">
