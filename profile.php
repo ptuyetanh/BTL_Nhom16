@@ -26,7 +26,10 @@
                         <strong><?php echo $row['tennguoidung'];?></strong><br>
                         <span>@<?php echo $row['tendangnhap'];?></span>
                     </div>
-
+<?php
+        }
+    }
+?>
                 </div>
                 <!--cover area-->
                 <div class="area_main ">
@@ -45,6 +48,17 @@
                         </div>
                     </div>
                     <!-- modal -->
+                    <?php
+                        $conn = mysqli_connect('localhost','root','','twitter');
+                        if(!$conn){
+                            die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
+                        }
+                        //truy vấn cơ sở dữ liệu
+                        $sql = "SELECT * FROM db_nguoidung WHERE ma_nguoidung=$ma_nguoidung";
+                        $result =mysqli_query($conn,$sql);
+                        if(mysqli_num_rows($result)){
+                            while($row =mysqli_fetch_assoc($result)){
+                    ?>
                     <form class="modal fade" id="model-message" data-bs-backdrop="static" data-bs-keyboard="false"
                         tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" action="process-profile.php" method="post" enctype="multipart/form-data" >
                         <div class="modal-dialog modal-lg">
@@ -76,25 +90,46 @@
                                     </div>
                                     <div class="profile-input">
                                         <div class="form-floating mb-4">
+                                            <input type="text" id="inputEmail" name="ma_nguoidung" class="form-control"
+                                                id="floatingInput" value="<?php echo $row['ma_nguoidung']?>" readonly>
+                                            <label for="floatingInput">Mã người dùng</label>
+                                        </div>
+                                        <div class="form-floating mb-4">
                                             <input type="text" id="inputEmail" name="tennguoidung" class="form-control"
-                                                id="floatingInput" value="<?php $row['tennguoidung']?>">
+                                                id="floatingInput" value="<?php echo $row['tennguoidung']?>">
                                             <label for="floatingInput">Tên</label>
                                         </div>
                                         <div class="form-floating mb-1">
                                             <input type="text" id="inputEmail" name="story" class="form-control"
-                                                id="floatingInput" value="<?php $row['story']?>">
+                                                id="floatingInput" value="<?php echo $row['story']?>">
                                             <label for="floatingInput">Tiểu sử</label>
                                         </div>
                                         <div class="form-floating mb-5 row">
                                             <label for="birthday" class="mb-5 text-secondary">Ngày sinh</label><br>
-                                            <input type="date" id="birthday" name="Dateofbirth" class="col-md-6 mt-5 ms-3" value="<?php $row['Dateofbirth']?>">
+                                            <input type="date" id="birthday" name="Dateofbirth" class="col-md-6 mt-5 ms-3" value="<?php echo $row['Dateofbirth']?>">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </form>
+                <?php
+                            }
+                        }
+                ?>
                 </div>
+<?php
+    $conn = mysqli_connect('localhost','root','','twitter');
+    if(!$conn){
+        die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
+    }
+    //truy vấn cơ sở dữ liệu
+    $sql = "SELECT * FROM db_nguoidung WHERE ma_nguoidung = '$ma_nguoidung'";
+    $result =mysqli_query($conn,$sql);
+    if(mysqli_num_rows($result)){
+        while($row =mysqli_fetch_assoc($result)){
+            $ma_nguoidung = $row['ma_nguoidung'];
+?>
                 <div class="profile-user mt-3">
                     <strong class="fs-4"><?php echo $row['tennguoidung'];?></strong><br>
                     <span>@<?php echo $row['tendangnhap'];?></span><br>

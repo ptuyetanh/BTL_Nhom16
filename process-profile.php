@@ -1,8 +1,6 @@
 <?php
-session_start();
-if(!isset($_SESSION['isLoginOK'])){
-    header("location:signin.php");
-    $_SESSION['isLoginOK']=$ma_nguoidung;
+if(isset($_POST['ma_nguoidung'])){
+    $ma_nguoidung = $_POST['ma_nguoidung'];
 }
 // Xử lý giá trị GỬI TỚI
 if(isset($_POST['tennguoidung'])){
@@ -19,12 +17,10 @@ if(!$conn){
     die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
 }
 // Bước 02: Thực hiện truy vấn
-$sql = "UPDATE db_nguoidung SET tennguoidung='$tennguoidung', story ='$story', Dateofbirth = '$Dateofbirth'";
-// echo $sql;
+$sql = "UPDATE db_nguoidung SET tennguoidung='$tennguoidung', story ='$story', Dateofbirth = '$Dateofbirth' WHERE ma_nguoidung=$ma_nguoidung";
 
 $ketqua = mysqli_query($conn,$sql);
     header("location: profile.php"); 
-// Include the database configuration file
 $conn = mysqli_connect('localhost','root','','twitter');
     if(!$conn){
         die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
