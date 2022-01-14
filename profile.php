@@ -33,7 +33,22 @@
                 </div>
                 <!--cover area-->
                 <div class="area_main ">
-                    <img id="background" class="img-fluid" src="img/images5.jpg" alt="">
+                         <?php
+                            $conn = mysqli_connect('localhost','root','','twitter');
+                            if(!$conn){
+                                die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
+                            }
+                            //truy vấn cơ sở dữ liệu
+                            $sql = "SELECT * FROM db_nguoidung WHERE ma_nguoidung = $ma_nguoidung";
+                            $result =mysqli_query($conn,$sql);
+                            if(mysqli_num_rows($result)){
+                                while($row =mysqli_fetch_assoc($result)){
+                                    $imageURL1 = 'uploads/'.$row["pofileCover"];
+                                echo '<img src="'.$imageURL1.'" id="background" class="img-fluid" width="400" height="200">';
+                            }
+                            }else{
+                                echo '<img id="background" class="img-fluid" src="img/images5.jpg" alt="">';}
+                         ?>
                 </div>
                 <div class=" profile">
                     <div class="profile_both">
@@ -90,7 +105,7 @@
                                         <div class="file_camera">
                                             <label for="filephoto1">
                                                 <i class="bi bi-camera fs-1 pe-3 ps-3 text-light"></i>
-                                                <input type="file" name="myFile" id="filephoto1">
+                                                <input type="file" name="myFile1" id="filephoto1">
                                             </label>
                                         </div>
                                     </div>
