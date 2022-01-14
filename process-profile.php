@@ -25,6 +25,7 @@ $conn = mysqli_connect('localhost','root','','twitter');
     if(!$conn){
         die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
     }
+//Xử lý phần ảnh avatar
 $statusMsg = '';
 
 // File upload path
@@ -39,7 +40,7 @@ if(isset($_POST["submit"]) && !empty($_FILES["myFile"]["name"])){
         // Upload file to server
         if(move_uploaded_file($_FILES["myFile"]["tmp_name"], $targetFilePath)){
             // Insert image file name into database
-            $sql="INSERT into images(file_name, uploaded_on) VALUES ('".$fileName."', NOW())";
+            $sql="UPDATE db_nguoidung SET pofileImage ='$fileName' WHERE ma_nguoidung=$ma_nguoidung";
             $insert =  mysqli_query($conn,$sql);
             if($insert){
                 $statusMsg = "The file ".$fileName. " has been uploaded successfully.";

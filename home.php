@@ -16,7 +16,22 @@
         <div class="card mb-3 status border-0" style="max-width: 700px;">
             <div class="row">
                 <div class="col-md-2">
-                    <img src="./img/no-image.png" alt="" class="rounded-circle ms-5" width="35" height="35">
+                <?php
+                    $conn = mysqli_connect('localhost','root','','twitter');
+                    if(!$conn){
+                        die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
+                    }
+                    //truy vấn cơ sở dữ liệu
+                    $sql = "SELECT * FROM db_nguoidung WHERE ma_nguoidung = $ma_nguoidung";
+                    $result =mysqli_query($conn,$sql);
+                    if(mysqli_num_rows($result)){
+                        while($row =mysqli_fetch_assoc($result)){
+                            $imageURL = 'uploads/'.$row["pofileImage"];
+                        echo '<img src="'.$imageURL.'" class="rounded-circle img-fluid ms-5"  width="35" height="35">';
+                    }
+                    }else{
+                        echo '<img src="img/no-image1.jpg" alt="">';
+                } ?>
                 </div>
                 <div class="col-md-10">
                     <form action="process-tweet.php" method="post" enctype="multipart/form-data">
@@ -61,22 +76,23 @@
     <hr>
     <!-- post-tweet  -->
     <?php
-                        $conn = mysqli_connect('localhost','root','','twitter');
-                        if(!$conn){
-                            die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
-                        }
+        $conn = mysqli_connect('localhost','root','','twitter');
+        if(!$conn){
+            die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
+        }
 
-                        //truy vấn cơ sở dữ liệu
-                        $sql = "SELECT * FROM db_nguoidung INNER JOIN tweet on db_nguoidung.ma_nguoidung=tweet.ma_nguoidung  WHERE db_nguoidung.ma_nguoidung = $ma_nguoidung  ORDER BY postedOn DESC ";
-                        $result =mysqli_query($conn,$sql);
-                        if(mysqli_num_rows($result)){
-                            while($row =mysqli_fetch_assoc($result)){
-                ?>
+        //truy vấn cơ sở dữ liệu
+        $sql = "SELECT * FROM db_nguoidung INNER JOIN tweet on db_nguoidung.ma_nguoidung=tweet.ma_nguoidung  WHERE db_nguoidung.ma_nguoidung = $ma_nguoidung  ORDER BY postedOn DESC ";
+        $result =mysqli_query($conn,$sql);
+        if(mysqli_num_rows($result)){
+            while($row =mysqli_fetch_assoc($result)){
+    ?>
     <section class="post-tweet">
         <div class="card mb-3 post border-0" style="max-width: 700px;">
             <div class="row g-0">
-                <a class="col-md-2" href="profile-follow.php">
-                    <img src="./img/no-image.png" alt="" class="rounded-circle ms-5" width="35" height="35">
+                <a class="col-md-2" href="profile.php">
+                   <?php  $imageURL = 'uploads/'.$row["pofileImage"];
+                   echo '<img src="'.$imageURL.'" alt="" class="rounded-circle ms-5" width="35" height="35">';?>
                 </a>
                 <div class="col-md-9 ">
                     <div class="post_header container-fluid row">

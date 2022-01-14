@@ -38,7 +38,22 @@
                 <div class=" profile">
                     <div class="profile_both">
                         <div class="col-md-7 profile_img">
-                            <img src="img/no-image1.jpg" alt="">
+                            <?php
+                                $conn = mysqli_connect('localhost','root','','twitter');
+                                if(!$conn){
+                                    die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
+                                }
+                                //truy vấn cơ sở dữ liệu
+                                $sql = "SELECT * FROM db_nguoidung WHERE ma_nguoidung = $ma_nguoidung";
+                                $result =mysqli_query($conn,$sql);
+                                if(mysqli_num_rows($result)){
+                                    while($row =mysqli_fetch_assoc($result)){
+                                        $imageURL = 'uploads/'.$row["pofileImage"];
+                                   echo '<img src="'.$imageURL.'" class="rounded-circle img-fluid" width="200" height="200">';
+                                }
+                                }else{
+                                   echo '<img src="img/no-image1.jpg" alt="">';
+                                } ?>
                         </div>
                         <div class=" col-md-5 profile_btn">
                             <a class="btn btn-light" href="#" role="button" data-bs-toggle="modal"
@@ -173,7 +188,8 @@
                             <div class="card mb-3 post border-0" style="max-width: 700px;">
                                 <div class="row g-0">
                                     <a class="col-md-2" href="profile-follow.php">
-                                        <img src="./img/no-image.png" alt="" class="rounded-circle ms-5" width="35" height="35">
+                                    <?php  $imageURL = 'uploads/'.$row["pofileImage"];
+                                        echo '<img src="'.$imageURL.'" alt="" class="rounded-circle ms-5" width="35" height="35">';?>
                                     </a>
                                     <div class="col-md-9 ">
                                         <div class="post_header container-fluid row">
