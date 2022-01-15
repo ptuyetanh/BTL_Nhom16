@@ -116,8 +116,8 @@
                                     id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
                                     <div class="row">
                                         <div class="col-md-3">
-                                            <img src="./img/no-image.png" alt="" class="rounded-circle me-3 mt-2"
-                                                width="32" height="32">
+                                        <?php  $imageURL = 'uploads/'.$row["pofileImage"];
+                                                echo '<img src="'.$imageURL.'" alt="" class="rounded-circle me-3 mt-2" width="35" height="35">';?>
                                         </div>
                                         <div class="col-md-8">
                                                <span><?php echo $row['tennguoidung'];?></span><br>
@@ -129,8 +129,8 @@
                                     <li><a class="dropdown-item" href="#">
                                             <div class="row">
                                                 <div class="col-md-1 mt-2 me-1">
-                                                    <img src="./img/no-image.png" alt="" class="rounded-circle"
-                                                        width="23" height="23">
+                                                <?php  $imageURL = 'uploads/'.$row["pofileImage"];
+                                                    echo '<img src="'.$imageURL.'" alt="" class="rounded-circle me-3 mt-2" width="35" height="35">';?>
                                                 </div>
                                                 <div class="col-md-10">
                                                     <span><?php echo $row['tennguoidung'];?></span><br>

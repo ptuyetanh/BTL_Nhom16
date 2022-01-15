@@ -110,10 +110,6 @@
                                 <a class="fs-5" href=""><i
                                         class="bi bi-chat"></i></a>
                             </li>
-                            <!-- Modal -->
-                            
-
-
                             <li class="nav-item ">
                                 <a class="fs-5" href="#"><i class="bi bi-arrow-left-right"></i></a>
                             </li>
@@ -144,7 +140,7 @@
 
     <div class="col-md-10">
                     <form action="them_bl.php?id=<?php echo $product['tweetID'];?>" method="post" enctype="multipart/form-data">
-                        <textarea name="comment" placeholder="Bình luận" aria-label="Bình luận"
+                        <textarea name="comment" placeholder="Nhập bình luận" aria-label="Nhập bình luận"
                             id="content_status" autofocus></textarea>
                         <div id="tweet_post">
                             <div class="container-fluid row">
@@ -172,7 +168,7 @@
                                 <div class="col-md-3 bg-light">
                                     <input type="file" name="myFile" id="fileimage"
                                         style="position: absolute;width:0;height:0;right:0;left:108px;opacity: 0;">
-                                    <input class="bg-primary" type="submit" id="submit-tweet-button" value="BÌnh luận"
+                                    <input class="bg-primary" type="submit" id="submit-tweet-button" value="Bình luận"
                                         role="button" >
                                 </div>
                             </div>
@@ -187,7 +183,9 @@
     if(!$conn){
         die("kết nối thất bại");
     }
-    $sql ="SELECT * FROM tweet , db_nguoidung WHERE db_nguoidung.ma_nguoidung = $ma_nguoidung AND tweetID =".$_GET['id'];
+    $id= $_GET['id'];
+    $sql ="SELECT * FROM comment , tweet WHERE comment.tweetID = tweet.tweetID AND comment.tweetID = $id ORDER BY commentID DESC ";
+
     $result = mysqli_query($conn,$sql);
         while($row =mysqli_fetch_assoc($result)){
   
@@ -195,7 +193,7 @@
     
    
 
-         <section class="thongbaoBL">
+         <section class="post-tweet">
         <div class="card mb-3 post border-0" style="max-width: 700px;">
             <div class="row g-0">
             <a class="col-md-2" href="profile-follow.php">
@@ -238,7 +236,71 @@
                                 <a class="fs-5" href="" data-bs-toggle="modal" data-bs-target="#modelCOMMENT"><i
                                         class="bi bi-chat"></i></a>
                             </li>
-                            
+                            <!-- Modal -->
+                            <div class="modal fade" id="modelCOMMENT" data-bs-backdrop="static" data-bs-keyboard="false"
+                                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body row">
+                                            <div class="reply-container">
+                                                <div class="reply-wrapper-image">
+                                                    <a class="" href="profile-follow.php">
+                                                        <img src="./img/no-image.png" alt="" class="rounded-circle "
+                                                            width="40" height="40">
+                                                    </a>
+                                                </div>
+                                                <div class="reply-container-wrapper">
+                                                    <div class="reply-container-desc">
+                                                        <div class="reply-user-fullName">
+                                                            Daniel Brown
+                                                        </div>
+                                                        <div class="reply-username">
+                                                            @brown
+                                                        </div>
+                                                        <div class="reply-date">
+                                                            <span class="reply-date-time">.</span>1h
+                                                        </div>
+                                                    </div>
+                                                    <div class="reply-desc-text">
+                                                        hello
+                                                    </div>
+                                                    <div class="reply-to-desc">
+                                                        <span class="reply-to">
+                                                            Reply to
+                                                        </span>
+                                                        <a href="" class="reply-username-link">@brown</a>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="vetical-pip"></div>
+                                            <div class="reply-user-msg">
+                                                <div class="reply-wrapper-image">
+                                                    <a class="" href="profile-follow.php">
+                                                        <img src="./img/no-image.png" alt="" class="rounded-circle "
+                                                            width="40" height="40">
+                                                    </a>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="model-footer " id="error_status">
+                                                <textarea class="replytxt" id="replyInput"
+                                                    placeholder="Tweet câu trả lời của bạn"></textarea>
+                                            </div>
+                                            <button class="reply-btn" id="replyBtn" role="button">
+                                                Reply
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
                             <li class="nav-item ">
                                 <a class="fs-5" href="#"><i class="bi bi-arrow-left-right"></i></a>
                             </li>
