@@ -20,11 +20,14 @@ session_start();
 
 <body>
   <div class="container-fluid">
-    <div class="col-md-12 header">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container-fluid">
-          <i class="bi bi-twitter"></i>
-          <a class="navbar-brand text-primary" href="#">Twitter Admin</a>
+        <a class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu"
+              aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="bi bi-twitter text-primary p-2"></i>
+            </a>
+
+          <a class="navbar-brand text-primary" href="#"> <i class="bi bi-twitter text-primary p-2"></i>Twitter Admin</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="Toggle navigation">
@@ -58,49 +61,67 @@ session_start();
           </div>
         </div>
       </nav>
-
-      <div class="row">
-        <div class="col-md-3 sidebar">
-
+     <div class="container-fluid">
+       <div class="row">
+        <div class="col-md-3 sidebar bg-dark">
           <nav class="navbar navbar-expand-md ">
-            <a class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu"
-              aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-              <i class="bi bi-twitter text-primary p-2"></i>
-            </a>
             <div class="collapse navbar-collapse" id="sidebarMenu">
-              <ul class="navbar-nav flex-column ">
-                <li class="nav-item fs-5  p-0,5 mb-2">
-                  <a class="nav-link " href="qlbv.php"><i class="bi bi-file-earmark-text-fill"></i>
-                    Quản lý bài viết
+              <ul class="navbar-nav flex-column mt-5">
+              <li class="nav-item fs-5  p-0,5 mb-2 mt-5">
+                  <a class="nav-link " href="index.php"><i class="bi bi-sliders"></i>
+                    Quản lý người dùng
                   </a>
                 </li>
                 <hr>
                 <li class="nav-item fs-5 p-0,5 mb-2">
-                  <a class="nav-link " href=""><i class="bi bi-sliders"></i>
-                    Quản lý người dùng</a>
+                  <a class="nav-link " href="tweet.php"><i class="bi bi-file-earmark-text-fill"></i>
+                  Quản lý bài viết</a>
+                  
                 </li>
                 <hr>
                 <li class="nav-item fs-5 p-0,5 mb-2">
-                  <a class="nav-link " href=""><i class="bi bi-person-circle"></i>
-                    Admin</a>
+                  <a class="nav-link " href="comment.php"><i class="bi bi-file-earmark-text-fill"></i>
+                  Quản lý bình luận</a>
+                  
                 </li>
                 <hr>
                 <li class="nav-item fs-5  p-0,5 mb-2">
                   <a class="nav-link " href=""><i class="bi bi-info-circle"></i>
                     Hỗ trợ</a>
                 </li>
+                <li class="nav-link dropup p-2 fs-4" style="margin-top:350px">
+                  <a href="#"
+                      class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
+                      id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="text-primary"><i class="bi bi-person-circle"></i>Admin</span><br>
+                  </a>
+                  <ul class="dropdown-menu text-small shadow " aria-labelledby="dropdownUser2">
+                      <li><a class="dropdown-item" href="#">
+                              <span><i class="bi bi-person-circle"></i>Admin</span><br>
+                          </a>
+                      </li>
+                      <li><a class="dropdown-item" href="#">Cài Đặt</a></li>
+                      <li>
+                          <hr class="dropdown-divider">
+                      </li>
+                      <li><a class="dropdown-item" href="logout.php">Đăng xuất</a></li>
+                  </ul>
+                </li>
                 <hr>
             </div>
         </div>
-        <div class="col-md-9 main">
+
+
+        <div class="col-md-9  mainqlbv">
           <table class="table">
             <thead>
               <tr>
                 <th scope="col">Mã bài viết</th>
                 <th scope="col">Trạng thái</th>
                 <th scope="col">Mã người dùng</th>
-                <th scope="col">tweetImage</th>
                 <th scope="col">Giờ đăng bài</th>
+                <th scope="col">Xoá</th>
+
               </tr>
             </thead>
             <tbody>
@@ -118,7 +139,6 @@ session_start();
                      <th scope="row"><?php echo $row['tweetID'];?></th>
                      <td><?php echo $row['content_status'];?></td>
                      <td><?php echo $row['ma_nguoidung'];?></td>
-                     <td><?php echo $row['tweetImage'];?> </td>
                      <td> <?php echo $row['postedOn'];?></td>
                      <td><a href="deleteBV.php?id=<?php echo $row['tweetID'];?>"><i class="bi bi-trash-fill"></i></td>
                    <tr>
@@ -136,7 +156,11 @@ session_start();
             </tbody>
           </table>
         </div>
-      </div>
+
+
+      
+     </div>
+      
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

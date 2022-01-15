@@ -144,7 +144,7 @@
 
     <div class="col-md-10">
                     <form action="them_bl.php?id=<?php echo $product['tweetID'];?>" method="post" enctype="multipart/form-data">
-                        <textarea name="comment" placeholder="Bạn đang nghĩ gì?" aria-label="Bạn đang nghĩ gì"
+                        <textarea name="comment" placeholder="Bình luận" aria-label="Bình luận"
                             id="content_status" autofocus></textarea>
                         <div id="tweet_post">
                             <div class="container-fluid row">
@@ -172,7 +172,7 @@
                                 <div class="col-md-3 bg-light">
                                     <input type="file" name="myFile" id="fileimage"
                                         style="position: absolute;width:0;height:0;right:0;left:108px;opacity: 0;">
-                                    <input class="bg-primary" type="submit" id="submit-tweet-button" value="Tweet"
+                                    <input class="bg-primary" type="submit" id="submit-tweet-button" value="BÌnh luận"
                                         role="button" >
                                 </div>
                             </div>

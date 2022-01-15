@@ -110,44 +110,54 @@ session_start();
                 <hr>
             </div>
         </div>
-        <div class="col-md-9 main mt-5">
-          <table class="table mt-5">
+
+
+        <div class="col-md-9  mainqlbv">
+          <table class="table">
             <thead>
               <tr>
-                <th scope="col">Mã người dùng</th>
-                <th scope="col">Tên đăng nhập</th>
-                <th scope="col">Email</th>
-                <th scope="col">Tên người dùng</th>
-                <th scope="col">Status</th>
-                <th scope="col">Xóa</th>
+                <th scope="col">Mã bình luận</th>
+                <th scope="col">Mã ngời dùng</th>
+                <th scope="col">Mã bài viết</th>
+                <th scope="col">Giờ bình luận</th>
+                <th scope="col">Xoá</th>
+
               </tr>
             </thead>
             <tbody>
-            <?php
-                 $conn = mysqli_connect('localhost','root','','twitter');
-                 if(!$conn){
-                   die("kết nối thất bại");
-                 }
-                 $sql = "SELECT * FROM db_nguoidung";
-                 $result = mysqli_query($conn,$sql);
-                 if(mysqli_num_rows($result) > 0){
-                   while($row = mysqli_fetch_assoc($result)){
-                     ?>
-                        <tr> 
-                          <th scope="row"><?php echo $row['ma_nguoidung'];?></th>
-                          <td><?php echo $row['tendangnhap'];?></td>
-                          <td><?php echo $row['email'];?></td>
-                          <td><?php echo $row['tennguoidung'];?> </td>
-                          <td><?php echo $row['status'];?></td>
-                          <td><a href="deleteNd.php?id=<?php echo $row['ma_nguoidung'];?>"><i class="bi bi-trash-fill"></i></td>
-                        <tr>
-                       <?php     
-                   }
-                 }
+            <?php 
+            $conn = mysqli_connect('localhost','root','','twitter');
+            if(!$conn){
+              die("kết nối thất bại");
+            }
+            $sql = "SELECT * FROM comment";
+            $result = mysqli_query($conn,$sql);
+            if(mysqli_num_rows($result) > 0){
+              while($row = mysqli_fetch_assoc($result)){
             ?>
+                   <tr> 
+                     <th scope="row"><?php echo $row['commentID'];?></th>
+                     <td><?php echo $row['ma_nguoidung'];?></td>
+                     <td><?php echo $row['tweetID'];?></td>
+                     <td> <?php echo $row['comment'];?></td>
+                     <td><a href="deletecomment.php?id=<?php echo $row['commentID'];?>"><i class="bi bi-trash-fill"></i></td>
+                   <tr>
+            
+            
+            <?php
+              }
+            }
+            ?>
+
+                 
+                       
+
+              
             </tbody>
           </table>
         </div>
+
+
       
      </div>
       
