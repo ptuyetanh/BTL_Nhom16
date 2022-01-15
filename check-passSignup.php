@@ -1,10 +1,4 @@
 <?php
-// trước khi cho người dùng xâm nhập vào bên trong
-// phải kiểm tra Thẻ làm việc
-session_start();
-if(!isset($_SESSION['isSigninOK'])){
-    header("location:signin.php");
-}
 if($_POST['password1'])//kiểm tra người dùng nhấp vào nút submit chưa và đã nhập mật khẩu chưa
 {   
          $pass1 = $_POST['password1'] ;
