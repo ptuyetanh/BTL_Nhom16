@@ -54,7 +54,7 @@
         ?>
         <ul class="nav nav-pills nav-fill follow bg-light">
             <li class="nav-item ">
-                <a class="nav-link text-dark" href="profile-follow.php">
+                <a class="nav-link text-dark" href="profile-follow.php?id=<?php echo $row['ma_nguoidung'];?>">
                     <div class="container-fluid row">
                         <div class="col-md-4">
                         <?php  $imageURL = 'uploads/'.$row["pofileImage"];
