@@ -89,7 +89,7 @@ session_start();
                   <a class="nav-link " href=""><i class="bi bi-info-circle"></i>
                     Hỗ trợ</a>
                 </li>
-                <li class="nav-link dropup p-2 fs-4" style="margin-top:350px">
+                <li class="nav-link dropup p-2 fs-4 p-0,5" style="margin-top: 270px;">
                   <a href="#"
                       class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
                       id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">

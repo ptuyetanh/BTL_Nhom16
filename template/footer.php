@@ -57,7 +57,8 @@
                 <a class="nav-link text-dark" href="profile-follow.php">
                     <div class="container-fluid row">
                         <div class="col-md-4">
-                            <img src="./img/no-image.png" alt="" class="rounded-circle" width="40" height="40">
+                        <?php  $imageURL = 'uploads/'.$row["pofileImage"];
+                            echo '<img src="'.$imageURL.'" alt="" class="rounded-circle me-5" width="35" height="35">';?>
                         </div>
                         <div class="col-md-6">
                             <strong><?php echo $row['tennguoidung'];?></strong><br>

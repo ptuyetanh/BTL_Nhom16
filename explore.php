@@ -74,25 +74,40 @@
               <strong>Gợi ý theo dõi</strong>
             </div>
           </nav>
+          <?php
+                 $conn = mysqli_connect('localhost','root','','twitter');
+                 if(!$conn){
+                   die("kết nối thất bại");
+                 }
+                 $sql = "SELECT * FROM db_nguoidung";
+                 $result = mysqli_query($conn,$sql);
+                 if(mysqli_num_rows($result) > 0){
+                   while($row = mysqli_fetch_assoc($result)){
+        ?>
           <ul class="nav nav-pills nav-fill follow bg-light">
             <li class="nav-item ">
               <a class="nav-link text-dark" href="#">
                 <div class="container-fluid row">
                   <div class="col-md-4">
-                    <img src="./img/no-image.png" alt="" class="rounded-circle" width="40" height="40">
+                  <?php  $imageURL = 'uploads/'.$row["pofileImage"];
+                       echo '<img src="'.$imageURL.'" alt="" class="rounded-circle me-5" width="35" height="35">';?>
                   </div>
                   <div class="col-md-6">
-                    <span>tên người dùng</span><br>
-                    <strong>@tên đăng nhập</strong>
+                    <strong><?php echo $row['tennguoidung'];?></strong><br>
+                    <span>@<?php echo $row['tendangnhap'];?></span>
                   </div>
                   <div class="col-md-2">
-                    <input class="bg-dark text-light" type="submit" id="submit-follow" value="Theo dõi" role="button"
-                      disabled="true">
-                  </div>
+                            <input class="bg-dark text-light" type="submit" id="submit-follow" value="Theo dõi"
+                                role="button" disabled="true">
+                        </div>
                 </div>
               </a>
             </li>
           </ul>
+          <?php
+            }
+          }
+           ?>      
           <div class="show-more">
             <a href="">Xem nhiều hơn</a>
           </div>
