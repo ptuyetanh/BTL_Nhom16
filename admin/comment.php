@@ -117,8 +117,9 @@ session_start();
             <thead>
               <tr>
                 <th scope="col">Mã bình luận</th>
-                <th scope="col">Mã ngời dùng</th>
+                <th scope="col">Mã người dùng</th>
                 <th scope="col">Mã bài viết</th>
+                <th scope="col">Nội dung bình luận</th>
                 <th scope="col">Giờ bình luận</th>
                 <th scope="col">Xoá</th>
 
@@ -140,6 +141,8 @@ session_start();
                      <td><?php echo $row['ma_nguoidung'];?></td>
                      <td><?php echo $row['tweetID'];?></td>
                      <td> <?php echo $row['comment'];?></td>
+                     <td> <?php echo $row['commentAt'];?></td>
+
                      <td><a href="deletecomment.php?id=<?php echo $row['commentID'];?>"><i class="bi bi-trash-fill"></i></td>
                    <tr>
             
